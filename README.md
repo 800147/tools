@@ -1,2 +1,5 @@
-# tools
-Little javascript tools for personal use
+# Web tools
+
+![icon](img/favicon.svg)
+
+[https://800147.github.io/tools](https://800147.github.io/tools)

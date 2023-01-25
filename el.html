@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>el.js — web tools from 800147.github.io</title>
+    <link rel="icon" type="image/svg+xml" href="./img/favicon.svg">
+    <link rel="icon" type="image/png" href="./img/favicon.png" />
+    <meta name="description" content="Tool that makes creation of elements easier" />
+    <link rel="stylesheet" href="./src/Document/Document.css" />
+  </head>
+  <body class="Document">
+    <h1>el.js</h1>
+    <section>
+      <h2>Guide</h2>
+      <p>
+        This tool is made to make creation of elements easier. I was inpired by JSX and wanted to
+        make something as easy to use and as easy to understand but something that would work
+        in browser without compiling.
+      </p>
+      <section>
+        <h3>"__" function</h3>
+        <p>
+          It is document.createElement wrapper that makes creation of elements easier. Just look:
+        </p>
+        <pre>
+// __(tagname, options, children)
+
+document.body.appendChild(
+  __('a', {
+    href: 'https://800147.github.io',
+    target: '_blank',
+    rel: 'noreferrer'
+  }, 'my link ^_^')
+);</pre>
+      </section>
+      <section>
+        <h3>Array as children</h3>
+        <p>
+          Children can be not only string, but also another elements, numbers, booleans or array of
+acceptable values with any nesting
+        </p>
+        <pre>
+document.body.appendChild(
+  __('p', {}, [
+    'Is it ', true, ' that ', [
+      'there is ', 0, ' sugar in this ', __('b', {}, 'cookie')
+    ], '?' ])
+);</pre>
+      </section>
+      <section>
+        <h3>Components</h3>
+        <p>
+          You can make components by wrapping creating of element with function
+        </p>
+        <pre>
+const Item = (n) => __('li', {}, `item ${n}`);
+
+document.body.appendChild(
+  __('ul', {}, [
+    Item(1),
+    Item(2),
+    Item(3)
+  ])
+);</pre>
+      </section>
+      <section>
+        <h3>Ignored children</h3>
+        <p>
+          All null, undefined and false values are ignored (but not the "0" number)
+        </p>
+        <pre>
+const FizzBuzzItem = (n) => __('li', {}, [
+  Boolean(n%3 && n%5) && n,
+  n%3 === 0 && 'Fizz',
+  n%5 === 0 && 'Buzz'
+]);
+
+const FizzBuzz = () => __('section', {}, [
+  __('h1', {}, 'FizzBuzz question'),
+  __('ul', {}, Array.from(Array(100).keys()).map(FizzBuzzItem))
+]);
+
+document.body.appendChild(FizzBuzz());</pre>
+      </section>
+      <section>
+        <h3>"used" function</h3>
+        <p>
+          "used" function just executes function with given argument and returns that argument
+        </p>
+        <pre>
+// used(function, argument)
+
+document.body.appendChild(__('section', {}, [
+  __('h1', {}, 'Hello button'),
+  __('p', {}, 'Here is the button that can say hello'),
+  used(
+    button => button.addEventListener('click', e => alert('Hello!')),
+    __('button', {}, 'Say hello')
+  )
+]));</pre>
+      </section>
+      <section>
+        <h3>"appendChildren" function</h3>
+        <p>
+          "appendChildren" function is the same function used in __ to append children. It can be used
+          separately to append children to any element
+        </p>
+        <pre>
+// appendChildren(parentElement, children)
+
+appendChildren(document.body, [
+  __('section', {}, 'section 1'),
+  __('section', {}, 'section 2'),
+  null,
+  __('section', {}, 'section 3'),
+  'non-section text'
+]);</pre>
+      </section>
+    </section>
+    <section>
+      <h2>Sources</h2>
+      <p>
+        The sources of el.js can be found
+        <a href="https://github.com/800147/tools/blob/main/src/el.js" target="_blank" rel="noreferrer">here</a>
+        or if you love typescript as I am —
+        <a href="https://github.com/800147/tools/blob/main/src/el.ts" target="_blank" rel="noreferrer">here</a>
+      </p>
+      <p>
+        <a href="/">
+          More web tools can be found here
+        </a>
+      </p>
+    </section>
+    <!-- <div class="Rulers" aria-hidden="true">
+      <div class="Rulers-Ruler" style="--size: var(--size-4xl);" draggable="true"></div>
+      <div class="Rulers-Ruler" style="--size: var(--size-3xl);" draggable="true"></div>
+      <div class="Rulers-Ruler" style="--size: var(--size-2xl);" draggable="true"></div>
+      <div class="Rulers-Ruler" style="--size: var(--size-xl);" draggable="true"></div>
+      <div class="Rulers-Ruler" style="--size: var(--size-l);" draggable="true"></div>
+      <div class="Rulers-Ruler" style="--size: var(--size-m);" draggable="true"></div>
+    </div> -->
+  </body>
+</html>
