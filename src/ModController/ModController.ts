@@ -8,6 +8,7 @@ export class ModController {
   constructor(domElement: HTMLElement, blockName: string) {
     this._domElem = domElement;
     this._blockName = blockName;
+    this._domElem.classList.add(this._blockName);
     this._mods = {};
 
     this.setMod = this.setMod.bind(this);
