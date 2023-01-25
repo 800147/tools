@@ -75,8 +75,6 @@
   --dark-4: #241f31;
   --dark-5: #000000;
 
-  font-size: 18px;
-
   --multiplier-xs: 0.3819660113;
   --multiplier-s: 0.6180339888;
   --multiplier-m: 1;
@@ -128,6 +126,7 @@ body {
 /* Section */
 .Document {
   max-width: 40rem;
+  box-sizing: border-box;
   padding: var(--size-xl) var(--size-l);
 }
 .Document, .Document section, .Document ul {
@@ -245,15 +244,25 @@ body {
 .Document pre {
   color: var(--light-1);
   background-color: var(--dark-3);
-  padding: var(--size-m);
   padding-top: calc(var(--size-l) + var(--offset-top));
   padding-bottom: calc(var(--size-l) + var(--offset-bottom));
-  margin-left: calc(var(--size-m) * -1);
-  margin-right: calc(var(--size-m) * -1);
+  padding-left: var(--size-l);
+  padding-right: var(--size-l);
+  margin-left: calc(var(--size-l) * -1);
+  margin-right: calc(var(--size-l) * -1);
   margin-top: var(--margin-top, 0px);
   margin-bottom: 0;
   border-radius: var(--size-l);
   overflow-x: auto;
+}
+@media (max-width: 40rem) {
+  .Document pre {
+    padding-left: var(--size-l);
+    padding-right: var(--size-l);
+    margin-left: calc(var(--size-l) * -1);
+    margin-right: calc(var(--size-l) * -1);
+    border-radius: 0px;
+  }
 }
 
 /* For indents testing (remove "display: none;") */
