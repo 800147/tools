@@ -6,7 +6,7 @@
     <title>getUrlParams.js — web tools from 800147.github.io</title>
     <link rel="icon" type="image/svg+xml" href="./img/favicon.svg" />
     <link rel="icon" type="image/png" href="./img/favicon.png" />
-    <meta name="description" content="Tool that converts url params to given form" />
+    <meta name="description" content="Tool that converts url params to given format" />
     <link rel="stylesheet" href="./src/Document/Document.css" />
   </head>
   <body class="Document">
@@ -14,12 +14,28 @@
     <section>
       <h2>Guide</h2>
       <p>
-        This tool converts url (get) params to given form.
+        This tool converts url (get) params to given format.
       </p>
-      <pre>
+      <section>
+        <h3>Calling without arguments</h3>
+        <p>
+          Calling without parsers returns get params in string format
+        </p>
+        <pre>
 // getUrlParams(parsers)
 
-const { title, num, isTrue, dayOfWeek } = getUrlParams({
+const { title, num } = getUrlParams();
+
+// ?title=Text&num=5
+// title === 'Text', num === '5'</pre>
+      </section>
+      <section>
+        <h3>Parsers argument</h3>
+        <p>
+          You can convert params to given format by adding parsers argument
+        </p>
+        <pre>
+const params = getUrlParams({
   num: Number,
   isTrue: Boolean,
   dayOfWeek: (param) =>
@@ -27,14 +43,34 @@ const { title, num, isTrue, dayOfWeek } = getUrlParams({
 });
 
 // ?title=Text&num=5&isTrue=1&dayOfWeek=2
-// => { title: 'Text', num: 5, isTrue: true, dayOfWeek: 'Tue' }
+// params === { title: 'Text', num: 5, isTrue: true, dayOfWeek: 'Tue' }</pre>
+      </section>
+      <section>
+        <h3>Missing params</h3>
+        <p>
+          Missing params are undefined even if parser is specified
+        </p>
+        <pre>
+const params = getUrlParams({
+ a: Boolean,
+ b: Boolean,
+ c: Boolean
+});
 
-// ?num=5&undescribedNum=5
-// => { num: 5, undescribedNum: '5' }
-// isTrue is undefined here
+// ?a=1&c=1
+// params === { a: true, c: true }</pre>
+      </section>
+      <section>
+        <h3>Multiple params</h3>
+        <p>
+          If there will be multiple params with the same name, only the last one will be in result
+        </p>
+        <pre>
+const { letter } = getUrlParams();
 
-// ?title=titleA&title=titleB
-// => { title: 'titleB' }</pre>
+// ?letter=a&letter=b&letter=c
+// letter === 'c'</pre>
+      </section>
     </section>
     <section>
       <h2>Sources</h2>
