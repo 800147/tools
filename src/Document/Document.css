@@ -97,6 +97,7 @@
   --size-5xl: 8.972135955rem;
   --size-6xl: 14.51722093rem;
 
+  --strong-color: var(--dark-5);
   --color: var(--dark-4);
   --weak-color: var(--dark-3);
   --accent-color: var(--green-4);
@@ -106,6 +107,7 @@
 }
 @media (prefers-color-scheme: dark) {
   :root {
+    --strong-color: var(--light-1);
     --color: var(--light-2);
     --weak-color: var(--light-3);
     --accent-color: var(--green-2);
@@ -128,6 +130,7 @@ body {
   max-width: 40rem;
   box-sizing: border-box;
   padding: var(--size-xl) var(--size-l);
+  padding-bottom: var(--size-6xl);
 }
 .Document, .Document section, .Document ul {
   display: grid;
@@ -149,6 +152,9 @@ body {
 .Document ul {
   margin-top: var(--margin-top, 0px);
 }
+.Document :is(p, li, h1, h2, h3, q) {
+  word-break: break-word;
+}
 .Document :is(p, li) {
   font-family: 'PT Serif', serif;
   font-weight: normal;
@@ -163,13 +169,15 @@ body {
   --size-multiplier: 1.904761905;
   --offset-top: -0.538em;
 }
-/* .Document :is(h1, h2, h3)  {
-  font-family: 'PT Serif Caption', serif;
-  font-weight: bold;
-  text-transform: none;
-  --size-multiplier: 1.763979538;
-  --offset-top: -0.574em;
-} */
+@media (max-width: 40rem) {
+  .Document :is(h3)  {
+    font-family: 'PT Serif Caption', serif;
+    font-weight: bold;
+    text-transform: none;
+    --size-multiplier: 1.763979538;
+    --offset-top: -0.574em;
+  }
+}
 .Document pre {
   font-family: 'PT Mono', monospace;
   font-weight: normal;
@@ -209,6 +217,18 @@ body {
 .Document h3 {
   --size: var(--size-l);
   --margin-top: calc(var(--size-2xl) - var(--size-xl));
+}
+@media (max-width: 40rem) {
+  .Document h1 {
+    --size: var(--size-xl);
+  }
+  .Document h2 {
+    --size: var(--size-l);
+  }
+  .Document h3 {
+    --size: var(--size-m);
+    color: var(--strong-color);
+  }
 }
 .Document :is(h1, h2, h3) + * {
   --margin-top: calc(var(--size-2xl) - var(--size-xl));
@@ -267,7 +287,7 @@ body {
 
 /* For indents testing (remove "display: none;") */
 .Rulers {
-  /* display: none; */
+  display: none;
 }
 .Rulers-Ruler {
   position: fixed;
