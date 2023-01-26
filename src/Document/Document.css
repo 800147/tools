@@ -129,16 +129,23 @@ body {
 .Document {
   max-width: 40rem;
   box-sizing: border-box;
-  padding: var(--size-xl) var(--size-l);
-  padding-bottom: var(--size-6xl);
+  padding: 0 var(--size-l) var(--size-6xl);
 }
-.Document, .Document section, .Document ul {
-  display: grid;
-  gap: var(--size-xl);
-}
-:where(.Document *) {
+:where(.Document :is(section, p, li, h1, h2, h3, pre, q, ul)) {
   /* make --margin-top non-inherited property */
-  --margin-top: 0px;
+  --margin-top: var(--size-xl);
+}
+.Document li > ul:not(:is(section, p, h1, h2, h3, pre, q, ul) + *) {
+  --margin-top: calc(var(--offset-bottom) * -1);
+}
+.Document li > :is(section, p, h1, h2, h3, pre, q):not(:is(section, p, h1, h2, h3, pre, q, ul) + *) {
+  --margin-top: calc(var(--size-xl) + var(--offset-top) - var(--offset-bottom));
+}
+.Document section {
+  margin-top: var(--margin-top);
+}
+.Document ul {
+  margin-top: calc(var(--margin-top) + var(--offset-top));
 }
 
 /* Text */
@@ -146,11 +153,8 @@ body {
   font-size: calc(var(--size) * var(--size-multiplier));
   line-height: calc((var(--line-gap) + 1) / var(--size-multiplier));
   --offset-bottom: calc((var(--line-gap) + 1) / var(--size-multiplier) * -1em + var(--size) - var(--offset-top));
-  margin-top: calc(var(--offset-top) + var(--margin-top, 0px));
+  margin-top: calc(var(--offset-top) + var(--margin-top));
   margin-bottom: calc(var(--offset-bottom));
-}
-.Document ul {
-  margin-top: var(--margin-top, 0px);
 }
 .Document :is(p, li, h1, h2, h3, q) {
   word-break: break-word;
@@ -205,18 +209,18 @@ body {
   --size: var(--size-2xl);
   --line-gap: var(--multiplier-s);
   --offset-top: -0.279em;
-  --margin-top: calc(var(--size-4xl) - var(--size-xl));
+  --margin-top: var(--size-4xl);
 }
 .Document h2 {
   --size: var(--size-xl);
   --line-gap: var(--multiplier-m);
   --offset-top: -0.375em;
-  --margin-top: calc(var(--size-3xl) - var(--size-xl));
+  --margin-top: var(--size-3xl);
   color: var(--accent-color);
 }
 .Document h3 {
   --size: var(--size-l);
-  --margin-top: calc(var(--size-2xl) - var(--size-xl));
+  --margin-top: var(--size-2xl);
 }
 @media (max-width: 40rem) {
   .Document h1 {
@@ -231,14 +235,13 @@ body {
   }
 }
 .Document :is(h1, h2, h3) + * {
-  --margin-top: calc(var(--size-2xl) - var(--size-xl));
+  --margin-top: var(--size-2xl);
 }
 
 /* List */
 .Document ul {
   padding: 0;
   padding-left: calc(var(--multiplier-l) * 1em);
-  margin: 0;
   list-style: none;
 }
 .Document ul > li {
@@ -270,7 +273,7 @@ body {
   padding-right: var(--size-l);
   margin-left: calc(var(--size-l) * -1);
   margin-right: calc(var(--size-l) * -1);
-  margin-top: var(--margin-top, 0px);
+  margin-top: var(--margin-top);
   margin-bottom: 0;
   border-radius: var(--size-l);
   overflow-x: auto;
@@ -287,7 +290,7 @@ body {
 
 /* For indents testing (remove "display: none;") */
 .Rulers {
-  display: none;
+  /* display: none; */
 }
 .Rulers-Ruler {
   position: fixed;
