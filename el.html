@@ -8,6 +8,11 @@
     <link rel="icon" type="image/png" href="./img/favicon.png" />
     <meta name="description" content="Tool that makes creation of elements easier" />
     <link rel="stylesheet" href="./src/Document/Document.css" />
+    <!-- https://highlightjs.org/usage/ -->
+    <script type="module">
+      import hljs from 'https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/es/highlight.min.js';
+      hljs.highlightAll();
+    </script>
   </head>
   <body class="Document">
     <h1>el.js</h1>
@@ -23,8 +28,7 @@
         <p>
           It is document.createElement wrapper that makes creation of elements easier. Just look:
         </p>
-        <pre>
-// __(tagname, options, children)
+        <pre><code class="language-javascript">// __(tagname, options, children)
 
 document.body.appendChild(
   __('a', {
@@ -32,7 +36,7 @@ document.body.appendChild(
     target: '_blank',
     rel: 'noreferrer'
   }, 'my link ^_^')
-);</pre>
+);</code></pre>
       </section>
       <section>
         <h3>Array as children</h3>
@@ -40,21 +44,19 @@ document.body.appendChild(
           Children can be not only string, but also another elements, numbers, booleans or array of
 acceptable values with any nesting
         </p>
-        <pre>
-document.body.appendChild(
+        <pre><code class="language-javascript">document.body.appendChild(
   __('p', {}, [
     'Is it ', true, ' that ', [
       'there is ', 0, ' sugar in this ', __('b', {}, 'cookie')
     ], '?' ])
-);</pre>
+);</code></pre>
       </section>
       <section>
         <h3>Components</h3>
         <p>
           You can make components by wrapping creating of element with function
         </p>
-        <pre>
-const Item = (n) => __('li', {}, `item ${n}`);
+        <pre><code class="language-javascript">const Item = (n) => __('li', {}, `item ${n}`);
 
 document.body.appendChild(
   __('ul', {}, [
@@ -62,18 +64,17 @@ document.body.appendChild(
     Item(2),
     Item(3)
   ])
-);</pre>
+);</code></pre>
       </section>
       <section>
         <h3>Ignored children</h3>
         <p>
           All null, undefined and false values are ignored (but not the "0" number)
         </p>
-        <pre>
-const FizzBuzzItem = (n) => __('li', {}, [
-  Boolean(n%3 && n%5) && n,
-  n%3 === 0 && 'Fizz',
-  n%5 === 0 && 'Buzz'
+        <pre><code class="language-javascript">const FizzBuzzItem = (n) => __('li', {}, [
+  Boolean(n % 3 && n % 5) && n,
+  n % 3 === 0 && 'Fizz',
+  n % 5 === 0 && 'Buzz'
 ]);
 
 const FizzBuzz = () => __('section', {}, [
@@ -81,24 +82,23 @@ const FizzBuzz = () => __('section', {}, [
   __('ul', {}, Array.from(Array(100).keys()).map(FizzBuzzItem))
 ]);
 
-document.body.appendChild(FizzBuzz());</pre>
+document.body.appendChild(FizzBuzz());</code></pre>
       </section>
       <section>
         <h3>"used" function</h3>
         <p>
           "used" function just executes function with given argument and returns that argument
         </p>
-        <pre>
-// used(function, argument)
+        <pre><code class="language-javascript">// used(function, argument)
 
 document.body.appendChild(__('section', {}, [
   __('h1', {}, 'Hello button'),
   __('p', {}, 'Here is the button that can say hello'),
   used(
-    button => button.addEventListener('click', e => alert('Hello!')),
+    (button) => button.addEventListener('click', (e) => alert('Hello!')),
     __('button', {}, 'Say hello')
   )
-]));</pre>
+]));</code></pre>
       </section>
       <section>
         <h3>"appendChildren" function</h3>
@@ -106,8 +106,7 @@ document.body.appendChild(__('section', {}, [
           "appendChildren" function is the same function used in __ to append children. It can be used
           separately to append children to any element
         </p>
-        <pre>
-// appendChildren(parentElement, children)
+        <pre><code class="language-javascript">// appendChildren(parentElement, children)
 
 appendChildren(document.body, [
   __('section', {}, 'section 1'),
@@ -115,7 +114,7 @@ appendChildren(document.body, [
   null,
   __('section', {}, 'section 3'),
   'non-section text'
-]);</pre>
+]);</code></pre>
       </section>
     </section>
     <section>

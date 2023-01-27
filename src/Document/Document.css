@@ -27,6 +27,33 @@
   font-display: swap;
 }
 
+/* styles for highlight.js https://highlightjs.org/usage/ */
+.hljs {
+  color: var(--light-2);
+}
+.hljs-comment {
+  color: var(--light-4);
+}
+.hljs-keyword {
+  color: var(--blue-3);
+}
+.hljs-variable,
+.hljs-property,
+.hljs-attr,
+.hljs-params {
+  color: var(--blue-1);
+}
+.hljs-title {
+  color: var(--yellow-4);
+}
+.hljs-string {
+  color: var(--orange-2);
+}
+.hljs-literal,
+.hljs-number {
+  color: var(--purple-1);
+}
+
 :root {
   /* https://developer.gnome.org/hig/reference/palette.html */
   --blue-1: #99c1f1;
@@ -149,7 +176,7 @@ body {
 }
 
 /* Text */
-.Document :is(p, li, h1, h2, h3, pre, q) {
+.Document :is(p, li, h1, h2, h3, pre, q, code) {
   font-size: calc(var(--size) * var(--size-multiplier));
   line-height: calc((var(--line-gap) + 1) / var(--size-multiplier));
   --offset-bottom: calc((var(--line-gap) + 1) / var(--size-multiplier) * -1em + var(--size) - var(--offset-top));
@@ -182,7 +209,7 @@ body {
     --offset-top: -0.574em;
   }
 }
-.Document pre {
+.Document :is(pre, code) {
   font-family: 'PT Mono', monospace;
   font-weight: normal;
   text-transform: none;

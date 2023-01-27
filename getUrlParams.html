@@ -8,6 +8,11 @@
     <link rel="icon" type="image/png" href="./img/favicon.png" />
     <meta name="description" content="Tool that converts url params to given format" />
     <link rel="stylesheet" href="./src/Document/Document.css" />
+    <!-- https://highlightjs.org/usage/ -->
+    <script type="module">
+      import hljs from 'https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/es/highlight.min.js';
+      hljs.highlightAll();
+    </script>
   </head>
   <body class="Document">
     <h1>getUrlParams.js</h1>
@@ -21,21 +26,19 @@
         <p>
           Calling without parsers returns get params in string format
         </p>
-        <pre>
-// getUrlParams(parsers)
+        <pre><code class="language-javascript">// getUrlParams(parsers)
 
 const { title, num } = getUrlParams();
 
 // ?title=Text&num=5
-// title === 'Text', num === '5'</pre>
+// title === 'Text', num === '5'</code></pre>
       </section>
       <section>
         <h3>Parsers argument</h3>
         <p>
           You can convert params to given format by adding parsers argument
         </p>
-        <pre>
-const params = getUrlParams({
+        <pre><code class="language-javascript">const params = getUrlParams({
   num: Number,
   isTrue: Boolean,
   dayOfWeek: (param) =>
@@ -43,33 +46,31 @@ const params = getUrlParams({
 });
 
 // ?title=Text&num=5&isTrue=1&dayOfWeek=2
-// params === { title: 'Text', num: 5, isTrue: true, dayOfWeek: 'Tue' }</pre>
+// params === { title: 'Text', num: 5, isTrue: true, dayOfWeek: 'Tue' }</code></pre>
       </section>
       <section>
         <h3>Missing params</h3>
         <p>
           Missing params are undefined even if parser is specified
         </p>
-        <pre>
-const params = getUrlParams({
+        <pre><code class="language-javascript">const params = getUrlParams({
  a: Boolean,
  b: Boolean,
  c: Boolean
 });
 
 // ?a=1&c=1
-// params === { a: true, c: true }</pre>
+// params === { a: true, c: true }</code></pre>
       </section>
       <section>
         <h3>Multiple params</h3>
         <p>
           If there will be multiple params with the same name, only the last one will be in result
         </p>
-        <pre>
-const { letter } = getUrlParams();
+        <pre><code class="language-javascript">const { letter } = getUrlParams();
 
 // ?letter=a&letter=b&letter=c
-// letter === 'c'</pre>
+// letter === 'c'</code></pre>
       </section>
     </section>
     <section>
