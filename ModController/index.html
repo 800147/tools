@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ModController.js — web tools from 800147.github.io</title>
+  <link rel="icon" type="image/svg+xml" href="../img/favicon.svg" />
+  <link rel="icon" type="image/png" href="../img/favicon.png" />
+  <meta name="description" content="Tool that helps to handle with BEM classes" />
+  <link rel="stylesheet" href="../src/Document/Document.css" />
+  <script type="module">
+    // https://highlightjs.org/usage/
+    import hljs from 'https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/es/highlight.min.js';
+    hljs.highlightAll();
+  </script>
+</head>
+<body class="Document">
+  <h1>ModController.js</h1>
+  <section>
+    <h2>Guide</h2>
+    <p>This tool helps to control BEM classes.</p>
+
+    <section>
+      <h3>Initialisation</h3>
+      <p>After initialisation block classname is added to element.</p>
+      <pre><code class="language-javascript">// new ModController(htmlElement, bemBlockOrElementName)
+
+// html:
+// &lt;div id="block">&lt;/div>
+
+const block = document.getElementById('block');
+const blockModController = new ModController(block, 'Block');
+
+// html:
+// &lt;div id="block" class="Block">&lt;/div></code></pre>
+    </section>
+    <section>
+      <h3>"setMod" method</h3>
+      <p>
+        setMod method adds modificator classname to element. Default value is true
+      </p>
+      <pre><code class="language-javascript">// setMod(name, value, redraw)
+
+// html:
+// &lt;div id="block" class="Block">&lt;/div>
+
+blockModController.setMod('big');
+blockModController.setMod('color', 'red');
+
+// html:
+// &lt;div id="block" class="Block Block_big Block_color_red">&lt;/div>
+
+blockModController.setMod('small'); // will not rewrite Block_big classname
+blockModController.setMod('color', 'green'); // will rewrite Block_color_red classname
+
+// html:
+// &lt;div id="block" class="Block Block_big Block_small Block_color_green">&lt;/div></code></pre>
+    </section>
+    <section>
+      <h3>Remove modificator</h3>
+      <p>
+        Set value to false or null to remove the modificator. "0" number or undefined will not
+        remove the modificator.
+      </p>
+      <pre><code class="language-javascript">// html:
+// &lt;div id="block" class="Block">&lt;/div>
+
+blockModController.setMod('count', 0);
+
+// html:
+// &lt;div id="block" class="Block Block_count_0">&lt;/div>
+
+blockModController.setMod('count', null);
+
+// html:
+// &lt;div id="block" class="Block">&lt;/div></code></pre>
+    </section>
+    <section>
+      <h3>Remove modificator and set it back again</h3>
+      <p>
+        Sometimes you need to keep the same classname, but trigger its creation. For example play
+        animation that related to it. For that purpose you can set redraw argument in setMod
+        function to true.
+      </p>
+      <pre><code class="language-javascript">// css:
+// @keyframes jump { 50% { bottom: 0.5rem; } }
+// .Block_jumping {
+//   position: relative;
+//   bottom: 0;
+//   animation: jump 0.5s;
+// }
+
+blockModController.setMod('jumping');
+
+setInterval(() => {
+  blockModController.setMod('jumping', true, true); // jump animation will be triggered again
+}, 1000);</code></pre>
+    </section>
+    <section>
+      <h3>Remove all modificators</h3>
+      <p>
+        To remove all modificators, use removeAllMods method
+      </p>
+      <pre><code class="language-javascript">// removeAllMods()
+
+// html:
+// &lt;div id="block" class="Block">&lt;/div>
+
+blockModController.setMod('big');
+blockModController.setMod('color', 'red');
+
+// html:
+// &lt;div id="block" class="Block Block_big Block_color_red">&lt;/div>
+
+blockModController.removeAllMods();
+
+// html:
+// &lt;div id="block" class="Block">&lt;/div></code></pre>
+    </section>
+  </section>
+  <section>
+    <h2>Sources</h2>
+    <p>
+      The sources of getUrlParams.js can be found
+      <a
+        href="https://github.com/800147/tools/blob/main/src/ModController/ModController.js"
+        target="_blank"
+        rel="noreferrer"
+      >here</a>
+      or if you love typescript as I am —
+      <a
+        href="https://github.com/800147/tools/blob/main/src/ModController/ModController.ts"
+        target="_blank"
+        rel="noreferrer"
+      >here</a>
+    </p>
+    <p>
+      <a href="../">More web tools can be found here</a>
+    </p>
+  </section>
+</body>
+</html>
