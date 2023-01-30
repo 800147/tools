@@ -1,27 +1,48 @@
 @font-face {
   font-family: 'PT Serif';
-  src: url('./fonts/pt-serif-v17-latin-regular.woff2') format("woff2");
+  src: url('./fonts/pt-serif_regular.woff2') format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
+  font-family: 'PT Serif';
+  src: url('./fonts/pt-serif_bold.woff2') format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PT Serif';
+  src: url('./fonts/pt-serif_italic.woff2') format("woff2");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PT Serif';
+  src: url('./fonts/pt-serif_bold-italic.woff2') format("woff2");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
   font-family: 'PT Serif Caption';
-  src: url('./fonts/pt-serif-caption-v17-latin-regular.woff2') format("woff2");
+  src: url('./fonts/pt-serif_caption-regular.woff2') format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'PT Sans';
-  src: url('./fonts/pt-sans-v17-latin-regular.woff2') format("woff2");
+  src: url('./fonts/pt-sans_regular.woff2') format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'PT Mono';
-  src: url('./fonts/pt-mono-v13-latin-regular.woff2') format("woff2");
+  font-family: 'JetBrains Mono';
+  src: url('./fonts/JetBrainsMono-Regular.woff2') format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -205,19 +226,19 @@
 }
 @media (max-width: 40rem) {
   .Document :is(h3)  {
-    font-family: 'PT Serif Caption', serif;
+    font-family: 'PT Serif', serif;
     font-weight: bold;
     text-transform: none;
-    --size-multiplier: 1.763979538;
-    --offset-top: -0.574em;
+    --size-multiplier: 2;
+    --offset-top: -0.532em;
   }
 }
 .Document :is(pre, code) {
-  font-family: 'PT Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-weight: normal;
   text-transform: none;
-  --size-multiplier: 2;
-  --offset-top: -0.48em;
+  --size-multiplier: 1.82;
+  --offset-top: -0.52em;
 }
 .Document-Breadcrumbs, .Document-Breadcrumbs :is(ul, li) {
   font-family: 'PT Sans', sans-serif;
