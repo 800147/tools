@@ -126,7 +126,7 @@
 
   --strong-color: var(--dark-5);
   --color: var(--dark-4);
-  --weak-color: var(--dark-3);
+  --weak-color: var(--light-4);
   --accent-color: var(--green-4);
   --link-color: var(--blue-4);
   --visited-link-color: var(--purple-4);
@@ -136,7 +136,7 @@
   :root {
     --strong-color: var(--light-1);
     --color: var(--light-2);
-    --weak-color: var(--light-3);
+    --weak-color: var(--dark-2);
     --accent-color: var(--green-2);
     --link-color: var(--blue-2);
     --visited-link-color: var(--purple-2);
@@ -144,19 +144,22 @@
   }
 }
 
-body {
-  margin: 0 auto;
-  --size: var(--size-m);
-  --line-gap: var(--multiplier-l);
-  color: var(--color);
+.Document-Body {
   background-color: var(--bg-color);
+  color: var(--color);
+  margin: 0;
 }
 
 /* Section */
-.Document {
+.Document_page {
   max-width: 40rem;
   box-sizing: border-box;
   padding: 0 var(--size-l) var(--size-6xl);
+  margin: 0 auto;
+}
+.Document {
+  --size: var(--size-m);
+  --line-gap: var(--multiplier-l);
 }
 :where(.Document :is(section, p, li, h1, h2, h3, pre, q, ul)) {
   /* make --margin-top non-inherited property */
@@ -176,7 +179,7 @@ body {
 }
 
 /* Text */
-.Document :is(p, li, h1, h2, h3, pre, q, code) {
+.Document :is(p, li, h1, h2, h3, pre, q, code), .Document-Breadcrumbs ul {
   font-size: calc(var(--size) * var(--size-multiplier));
   line-height: calc((var(--line-gap) + 1) / var(--size-multiplier));
   --offset-bottom: calc((var(--line-gap) + 1) / var(--size-multiplier) * -1em + var(--size) - var(--offset-top));
@@ -216,7 +219,7 @@ body {
   --size-multiplier: 2;
   --offset-top: -0.48em;
 }
-.Text_font_sans {
+.Document-Breadcrumbs, .Document-Breadcrumbs :is(ul, li) {
   font-family: 'PT Sans', sans-serif;
   font-weight: normal;
   text-transform: none;
@@ -312,6 +315,44 @@ body {
     margin-left: calc(var(--size-l) * -1);
     margin-right: calc(var(--size-l) * -1);
     border-radius: 0px;
+  }
+}
+
+/* Breadcrumbs */
+.Document-Breadcrumbs > ul {
+  position: absolute;
+  top: var(--size-xl);
+  --size: var(--size-l);
+  padding: 0 var(--size-l);
+  --margin-top: 0px;
+  max-width: 40rem;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+.Document-Breadcrumbs > ul > li {
+  display: inline-block;
+  --margin-top: 0px;
+}
+.Document-Breadcrumbs > ul > li::before {
+  display: none;
+}
+.Document-Breadcrumbs > ul > li > a::after {
+  display: inline;
+  content: ' /'
+}
+.Document-Breadcrumbs :is(a, a:visited) {
+  color: var(--weak-color);
+  text-decoration: none;
+}
+.Document-Breadcrumbs a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 40rem) {
+  .Document-Breadcrumbs li:not(:last-child) {
+    display: none;
   }
 }
 

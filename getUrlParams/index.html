@@ -14,31 +14,38 @@
       hljs.highlightAll();
     </script>
   </head>
-  <body class="Document">
-    <h1>getUrlParams.js</h1>
-    <section>
-      <h2>Guide</h2>
-      <p>
-        This tool converts url (get) params to given format.
-      </p>
+  <body class="Document-Body">
+    <nav class="Document-Breadcrumbs">
+      <ul>
+        <li><a href="../../">800147.github.io</a></li>
+        <li><a href="../">tools</a></li>
+      </ul>
+    </nav>
+    <main class="Document Document_page">
+      <h1>getUrlParams.js</h1>
       <section>
-        <h3>Calling without arguments</h3>
+        <h2>Guide</h2>
         <p>
-          Calling without parsers returns get params in string format
+          This tool converts url (get) params to given format.
         </p>
-        <pre><code class="language-javascript">// getUrlParams(parsers)
+        <section>
+          <h3>Calling without arguments</h3>
+          <p>
+            Calling without parsers returns get params in string format
+          </p>
+          <pre><code class="language-javascript">// getUrlParams(parsers)
 
 const { title, num } = getUrlParams();
 
 // ?title=Text&num=5
 // title === 'Text', num === '5'</code></pre>
-      </section>
-      <section>
-        <h3>Parsers argument</h3>
-        <p>
-          You can convert params to given format by adding parsers argument
-        </p>
-        <pre><code class="language-javascript">const params = getUrlParams({
+        </section>
+        <section>
+          <h3>Parsers argument</h3>
+          <p>
+            You can convert params to given format by adding parsers argument
+          </p>
+          <pre><code class="language-javascript">const params = getUrlParams({
   num: Number,
   isTrue: Boolean,
   dayOfWeek: (param) =>
@@ -47,13 +54,13 @@ const { title, num } = getUrlParams();
 
 // ?title=Text&num=5&isTrue=1&dayOfWeek=2
 // params === { title: 'Text', num: 5, isTrue: true, dayOfWeek: 'Tue' }</code></pre>
-      </section>
-      <section>
-        <h3>Missing params</h3>
-        <p>
-          Missing params are undefined even if parser is specified
-        </p>
-        <pre><code class="language-javascript">const params = getUrlParams({
+        </section>
+        <section>
+          <h3>Missing params</h3>
+          <p>
+            Missing params are undefined even if parser is specified
+          </p>
+          <pre><code class="language-javascript">const params = getUrlParams({
  a: Boolean,
  b: Boolean,
  c: Boolean
@@ -61,37 +68,46 @@ const { title, num } = getUrlParams();
 
 // ?a=1&c=1
 // params === { a: true, c: true }</code></pre>
-      </section>
-      <section>
-        <h3>Multiple params</h3>
-        <p>
-          If there will be multiple params with the same name, only the last one will be in result
-        </p>
-        <pre><code class="language-javascript">const { letter } = getUrlParams();
+        </section>
+        <section>
+          <h3>Multiple params</h3>
+          <p>
+            If there will be multiple params with the same name, only the last one will be in result
+          </p>
+          <pre><code class="language-javascript">const { letter } = getUrlParams();
 
 // ?letter=a&letter=b&letter=c
 // letter === 'c'</code></pre>
+        </section>
       </section>
-    </section>
-    <section>
-      <h2>Sources</h2>
-      <p>
-        The sources of getUrlParams.js can be found
-        <a
-          href="https://github.com/800147/tools/blob/main/src/getUrlParams/getUrlParams.js"
-          target="_blank"
-          rel="noreferrer"
-        >here</a>
-        or if you love typescript as I am —
-        <a
-          href="https://github.com/800147/tools/blob/main/src/getUrlParams/getUrlParams.ts"
-          target="_blank"
-          rel="noreferrer"
-        >here</a>
-      </p>
-      <p>
-        <a href="../">More web tools can be found here</a>
-      </p>
-    </section>
+      <section>
+        <h2>Sources</h2>
+        <p>
+          The sources of getUrlParams.js can be found
+          <a
+            href="https://github.com/800147/tools/blob/main/src/getUrlParams/getUrlParams.js"
+            target="_blank"
+            rel="noreferrer"
+          >here</a>
+          or if you love typescript as I am —
+          <a
+            href="https://github.com/800147/tools/blob/main/src/getUrlParams/getUrlParams.ts"
+            target="_blank"
+            rel="noreferrer"
+          >here</a>
+        </p>
+        <p>
+          <a href="../">More web tools can be found here</a>
+        </p>
+      </section>
+    </main>
+    <!-- <div class="Rulers" aria-hidden="true">
+      <div class="Rulers-Ruler" style="--size: var(--size-4xl);" draggable="true"></div>
+      <div class="Rulers-Ruler" style="--size: var(--size-3xl);" draggable="true"></div>
+      <div class="Rulers-Ruler" style="--size: var(--size-2xl);" draggable="true"></div>
+      <div class="Rulers-Ruler" style="--size: var(--size-xl);" draggable="true"></div>
+      <div class="Rulers-Ruler" style="--size: var(--size-l);" draggable="true"></div>
+      <div class="Rulers-Ruler" style="--size: var(--size-m);" draggable="true"></div>
+    </div> -->
   </body>
 </html>
