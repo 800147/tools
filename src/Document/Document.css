@@ -184,14 +184,14 @@
   --size: var(--size-m);
   --line-gap: var(--multiplier-l);
 }
-:where(.Document :is(section, p, li, h1, h2, h3, pre, q, ul, figcaption)) {
+:where(.Document :is(section, p, li, h1, h2, h3, h4, pre, q, ul, figcaption)) {
   /* make --margin-top non-inherited property */
   --margin-top: var(--size-xl);
 }
-.Document li > ul:not(:is(section, p, h1, h2, h3, pre, q, ul) + *) {
+.Document li > ul:not(:is(section, p, h1, h2, h3, h4, pre, q, ul) + *) {
   --margin-top: calc(var(--offset-bottom) * -1);
 }
-.Document li > :is(section, p, h1, h2, h3, pre, q):not(:is(section, p, h1, h2, h3, pre, q, ul) + *) {
+.Document li > :is(section, p, h1, h2, h3, h4, pre, q):not(:is(section, p, h1, h2, h3, h4, pre, q, ul) + *) {
   --margin-top: calc(var(--size-xl) + var(--offset-top) - var(--offset-bottom));
 }
 .Document section {
@@ -202,14 +202,14 @@
 }
 
 /* Text */
-.Document :is(p, li, h1, h2, h3, pre, q, code, figcaption), .Document-Breadcrumbs ul {
+.Document :is(p, li, h1, h2, h3, h4, pre, q, code, figcaption), .Document-Breadcrumbs ul {
   font-size: calc(var(--size) * var(--size-multiplier));
   line-height: calc((var(--line-gap) + 1) / var(--size-multiplier));
   --offset-bottom: calc((var(--line-gap) + 1) / var(--size-multiplier) * -1em + var(--size) - var(--offset-top));
   margin-top: calc(var(--offset-top) + var(--margin-top));
   margin-bottom: calc(var(--offset-bottom));
 }
-.Document :is(p, li, h1, h2, h3, q) {
+.Document :is(p, li, h1, h2, h3, h4, q) {
   word-break: break-word;
 }
 .Document :is(p, li) {
@@ -258,6 +258,9 @@
 }
 
 /* Heading */
+.Document :is(h1, h2, h3, h4) + * {
+  --margin-top: var(--size-2xl);
+}
 .Document h1 {
   --size: var(--size-2xl);
   --line-gap: var(--multiplier-s);
@@ -273,14 +276,12 @@
 }
 .Document h3 {
   --size: var(--size-l);
-  --margin-top: var(--size-2xl);
+  --margin-top: var(--size-3xl);
 }
 .Document h4 {
   --size: var(--size-m);
+  --margin-top: var(--size-3xl);
   color: var(--strong-color);
-}
-.Document :is(h1, h2, h3, h4) + * {
-  --margin-top: var(--size-2xl);
 }
 
 /* List */
