@@ -226,14 +226,12 @@
   --size-multiplier: 1.904761905;
   --offset-top: -0.538em;
 }
-@media (max-width: 40rem) {
-  .Document :is(h3)  {
-    font-family: 'PT Serif', serif;
-    font-weight: bold;
-    text-transform: none;
-    --size-multiplier: 2;
-    --offset-top: -0.532em;
-  }
+.Document h4 {
+  font-family: 'PT Serif', serif;
+  font-weight: bold;
+  text-transform: none;
+  --size-multiplier: 2;
+  --offset-top: -0.532em;
 }
 .Document :is(pre, code) {
   font-family: 'JetBrains Mono', monospace;
@@ -277,19 +275,11 @@
   --size: var(--size-l);
   --margin-top: var(--size-2xl);
 }
-@media (max-width: 40rem) {
-  .Document h1 {
-    --size: var(--size-xl);
-  }
-  .Document h2 {
-    --size: var(--size-l);
-  }
-  .Document h3 {
-    --size: var(--size-m);
-    color: var(--strong-color);
-  }
+.Document h4 {
+  --size: var(--size-m);
+  color: var(--strong-color);
 }
-.Document :is(h1, h2, h3) + * {
+.Document :is(h1, h2, h3, h4) + * {
   --margin-top: var(--size-2xl);
 }
 
