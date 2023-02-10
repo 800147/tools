@@ -262,8 +262,8 @@
 }
 .Document h1 {
   --size: var(--size-2xl);
-  --line-gap: var(--multiplier-s);
-  --offset-top: -0.279em;
+  --line-gap: var(--multiplier-m);
+  --offset-top: -0.371em;
   --margin-top: var(--size-4xl);
 }
 .Document h2 {
@@ -288,6 +288,7 @@
   padding: 0;
   padding-left: calc(var(--multiplier-l) * 1em);
   list-style: none;
+  --offset-top: -0.532em;
 }
 .Document ul > li {
   position: relative;
