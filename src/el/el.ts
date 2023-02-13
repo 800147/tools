@@ -3,7 +3,7 @@ export type usedType = <T>(func: (param: T) => void, param: T) => T;
 export type appendChildrenType = (el: Node, children?: ValidChild) => void;
 export type elType = <K extends keyof HTMLElementTagNameMap>(
   tagName: K,
-  attrs?: Partial<HTMLElementTagNameMap[K]> | null,
+  attrs?: (Partial<HTMLElementTagNameMap[K]> & { dataset?: { [key: string]: unknown } }) | undefined,
   children?: ValidChild,
 ) => Node;
 
@@ -20,9 +20,10 @@ export const appendChildren: appendChildrenType = (el, child) => {
   el.appendChild(typeof child === 'object' ? child : document.createTextNode(String(child)));
 };
 
-export const __: elType = (tagName, attrs = null, children) => {
+export const __: elType = (tagName, { dataset, ...attrs } = {}, children) => {
   const el = document.createElement(tagName);
   Object.assign(el, attrs);
+  Object.assign(el.dataset, dataset);
   appendChildren(el, children);
   return el;
 };
