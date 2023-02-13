@@ -263,7 +263,7 @@
 .Document h1 {
   --size: var(--size-2xl);
   --line-gap: var(--multiplier-m);
-  --offset-top: -0.371em;
+  --offset-top: -0.375em;
   --margin-top: var(--size-4xl);
 }
 .Document h2 {
@@ -349,6 +349,7 @@
   border-radius: var(--size-m);
   display: block;
   max-width: 100%;
+  height: auto;
   box-shadow: 0 var(--size-xs) var(--size-m) var(--light-3);
   margin: 0 auto;
 }
