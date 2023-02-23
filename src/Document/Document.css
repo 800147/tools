@@ -246,7 +246,7 @@
   --strong-color: var(--dark-5);
   --color: var(--dark-4);
   --weak-color: var(--light-4);
-  --accent-color: var(--green-4);
+  --accent-color: var(--green-5);
   --link-color: var(--blue-4);
   --visited-link-color: var(--purple-4);
   --code-color: var(--red-4);
@@ -450,10 +450,12 @@
   height: auto;
   box-shadow: 0 var(--size-xs) var(--size-m) var(--light-3);
   margin: 0 auto;
+  background-color: var(--light-3);
 }
 @media (prefers-color-scheme: dark) {
   .Document figure > img {
     box-shadow: 0 0 var(--size-m) var(--dark-2);
+    background-color: var(--dark-3);
   }
 }
 .Document figcaption {
