@@ -281,56 +281,57 @@
   --size: var(--size-m);
   --line-gap: var(--multiplier-l);
 }
-:where(.Document :is(section, p, li, h1, h2, h3, h4, pre, q, ul, figcaption)) {
+:where(.Document :is(section, p, li, h1, h2, h3, h4, pre, q, ul, figcaption):not(.Document-Exclude):not(.Document-Exclude *)) {
   /* make --margin-top non-inherited property */
   --margin-top: var(--size-xl);
 }
-.Document li > ul:not(:is(section, p, h1, h2, h3, h4, pre, q, ul) + *) {
+.Document li > ul:not(:is(section, p, h1, h2, h3, h4, pre, q, ul) + *):not(.Document-Exclude):not(.Document-Exclude *) {
   --margin-top: calc(var(--offset-bottom) * -1);
 }
-.Document li > :is(section, p, h1, h2, h3, h4, pre, q):not(:is(section, p, h1, h2, h3, h4, pre, q, ul) + *) {
+.Document li > :is(section, p, h1, h2, h3, h4, pre, q):not(:is(section, p, h1, h2, h3, h4, pre, q, ul) + *):not(.Document-Exclude):not(.Document-Exclude *) {
   --margin-top: calc(var(--size-xl) + var(--offset-top) - var(--offset-bottom));
 }
-.Document section {
+.Document section:not(.Document-Exclude):not(.Document-Exclude *) {
   margin-top: var(--margin-top);
 }
-.Document ul {
+.Document ul:not(.Document-Exclude):not(.Document-Exclude *) {
   margin-top: calc(var(--margin-top) + var(--offset-top));
 }
 
 /* Text */
-.Document :is(p, li, h1, h2, h3, h4, pre, q, code, figcaption), .Document-Breadcrumbs ul {
+.Document :is(p, li, h1, h2, h3, h4, pre, q, code, figcaption):not(.Document-Exclude):not(.Document-Exclude *),
+.Document-Breadcrumbs ul:not(.Document-Exclude):not(.Document-Exclude *) {
   font-size: calc(var(--size) * var(--size-multiplier));
   line-height: calc((var(--line-gap) + 1) / var(--size-multiplier));
   --offset-bottom: calc((var(--line-gap) + 1) / var(--size-multiplier) * -1em + var(--size) - var(--offset-top));
   margin-top: calc(var(--offset-top) + var(--margin-top));
   margin-bottom: calc(var(--offset-bottom));
 }
-.Document :is(p, li, h1, h2, h3, h4, q) {
+.Document :is(p, li, h1, h2, h3, h4, q):not(.Document-Exclude):not(.Document-Exclude *) {
   word-break: break-word;
 }
-.Document :is(p, li) {
+.Document :is(p, li):not(.Document-Exclude):not(.Document-Exclude *) {
   font-family: 'PT Serif', fallback-for-PT-Serif-1, fallback-for-PT-Serif-2, serif;
   font-weight: normal;
   text-transform: none;
   --size-multiplier: 2;
   --offset-top: -0.532em;
 }
-.Document :is(h1, h2, h3) {
+.Document :is(h1, h2, h3):not(.Document-Exclude):not(.Document-Exclude *) {
   font-family: 'PT Serif Caption', fallback-for-PT-Serif-Caption-1, fallback-for-PT-Serif-Caption-2, serif;
   font-weight: normal;
   text-transform: none;
   --size-multiplier: 1.904761905;
   --offset-top: -0.538em;
 }
-.Document h4 {
+.Document h4:not(.Document-Exclude):not(.Document-Exclude *) {
   font-family: 'PT Serif', fallback-for-PT-Serif-Bold-1, fallback-for-PT-Serif-Bold-2, serif;
   font-weight: bold;
   text-transform: none;
   --size-multiplier: 2;
   --offset-top: -0.532em;
 }
-.Document :is(pre, code) {
+.Document :is(pre, code):not(.Document-Exclude):not(.Document-Exclude *) {
   font-family: 'JetBrains Mono', fallback-for-JetBrains-Mono-1, fallback-for-JetBrains-Mono-2, monospace;
   font-weight: normal;
   text-transform: none;
@@ -338,14 +339,15 @@
   --offset-top: -0.52em;
   font-variant-ligatures: none;
 }
-.Document-Breadcrumbs, .Document-Breadcrumbs :is(ul, li) {
+.Document-Breadcrumbs:not(.Document-Exclude):not(.Document-Exclude *),
+.Document-Breadcrumbs :is(ul, li):not(.Document-Exclude):not(.Document-Exclude *) {
   font-family: 'PT Sans', fallback-for-PT-Sans-1, fallback-for-PT-Sans-2, sans-serif;
   font-weight: normal;
   text-transform: none;
   --size-multiplier: 2;
   --offset-top: -0.526em;
 }
-.Document figcaption {
+.Document figcaption:not(.Document-Exclude):not(.Document-Exclude *) {
   font-family: 'PT Sans', fallback-for-PT-Sans-1, fallback-for-PT-Sans-2, sans-serif;
   font-weight: normal;
   text-transform: none;
@@ -355,44 +357,44 @@
 }
 
 /* Heading */
-.Document :is(h1, h2, h3, h4) + * {
+.Document :is(h1, h2, h3, h4) + *:not(.Document-Exclude):not(.Document-Exclude *) {
   --margin-top: var(--size-2xl);
 }
-.Document h1 {
+.Document h1:not(.Document-Exclude):not(.Document-Exclude *) {
   --size: var(--size-2xl);
   --line-gap: var(--multiplier-m);
   --offset-top: -0.375em;
   --margin-top: var(--size-4xl);
 }
-.Document h2 {
+.Document h2:not(.Document-Exclude):not(.Document-Exclude *) {
   --size: var(--size-xl);
   --line-gap: var(--multiplier-m);
   --offset-top: -0.375em;
   --margin-top: var(--size-3xl);
   color: var(--accent-color);
 }
-.Document h3 {
+.Document h3:not(.Document-Exclude):not(.Document-Exclude *) {
   --size: var(--size-l);
   --margin-top: var(--size-3xl);
 }
-.Document h4 {
+.Document h4:not(.Document-Exclude):not(.Document-Exclude *) {
   --size: var(--size-m);
   --margin-top: var(--size-3xl);
   color: var(--strong-color);
 }
 
 /* List */
-.Document ul {
+.Document ul:not(.Document-Exclude):not(.Document-Exclude *) {
   padding: 0;
   padding-left: calc(var(--multiplier-l) * 1em);
   list-style: none;
   --offset-top: -0.532em;
 }
-.Document ul > li {
+.Document ul > li:not(.Document-Exclude):not(.Document-Exclude *) {
   position: relative;
   page-break-inside: avoid;
 }
-.Document ul > li::before {
+.Document ul > li:not(.Document-Exclude):not(.Document-Exclude *)::before {
   content: '•';
   position: absolute;
   left: -1em;
@@ -400,15 +402,15 @@
 }
 
 /* Link */
-.Document a {
+.Document a:not(.Document-Exclude):not(.Document-Exclude *) {
   color: var(--link-color);
 }
-.Document a:visited {
+.Document a:visited:not(.Document-Exclude):not(.Document-Exclude *) {
   color: var(--visited-link-color);
 }
 
 /* Code */
-.Document pre {
+.Document pre:not(.Document-Exclude):not(.Document-Exclude *) {
   color: var(--light-1);
   background-color: var(--dark-4);
   padding-top: calc(var(--size-l) + var(--offset-top));
@@ -423,7 +425,7 @@
   overflow-x: auto;
 }
 @media (max-width: 40rem) {
-  .Document pre {
+  .Document pre:not(.Document-Exclude):not(.Document-Exclude *) {
     padding-left: var(--size-l);
     padding-right: var(--size-l);
     margin-left: calc(var(--size-l) * -1);
@@ -431,19 +433,19 @@
     border-radius: 0px;
   }
 }
-.Document code:not(pre > code) {
+.Document code:not(pre > code):not(.Document-Exclude):not(.Document-Exclude *) {
   color: var(--code-color);
   line-height: 0;
 }
 
 /* Images */
-.Document figure {
+.Document figure:not(.Document-Exclude):not(.Document-Exclude *) {
   padding: 0;
   margin: 0;
   margin-top: var(--size-xl);
   text-align: center;
 }
-.Document figure > img {
+.Document figure > img:not(.Document-Exclude):not(.Document-Exclude *) {
   border-radius: var(--size-m);
   display: block;
   max-width: 100%;
@@ -453,17 +455,17 @@
   background-color: var(--light-3);
 }
 @media (prefers-color-scheme: dark) {
-  .Document figure > img {
+  .Document figure > img:not(.Document-Exclude):not(.Document-Exclude *) {
     box-shadow: 0 0 var(--size-m) var(--dark-2);
     background-color: var(--dark-3);
   }
 }
-.Document figcaption {
+.Document figcaption:not(.Document-Exclude):not(.Document-Exclude *) {
   --margin-top: var(--size-l);
 }
 
 /* Breadcrumbs */
-.Document-Breadcrumbs > ul {
+.Document-Breadcrumbs > ul:not(.Document-Exclude):not(.Document-Exclude *) {
   position: absolute;
   top: var(--size-xl);
   --size: var(--size-l);
@@ -475,26 +477,26 @@
   left: 0;
   right: 0;
 }
-.Document-Breadcrumbs > ul > li {
+.Document-Breadcrumbs > ul > li:not(.Document-Exclude):not(.Document-Exclude *) {
   display: inline-block;
   --margin-top: 0px;
 }
-.Document-Breadcrumbs > ul > li::before {
+.Document-Breadcrumbs > ul > li:not(.Document-Exclude):not(.Document-Exclude *)::before {
   display: none;
 }
-.Document-Breadcrumbs > ul > li > a::after {
+.Document-Breadcrumbs > ul > li > a:not(.Document-Exclude):not(.Document-Exclude *)::after {
   display: inline;
   content: ' /'
 }
-.Document-Breadcrumbs :is(a, a:visited) {
+.Document-Breadcrumbs :is(a, a:visited):not(.Document-Exclude):not(.Document-Exclude *) {
   color: var(--weak-color);
   text-decoration: none;
 }
-.Document-Breadcrumbs a:hover {
+.Document-Breadcrumbs a:hover:not(.Document-Exclude):not(.Document-Exclude *) {
   text-decoration: underline;
 }
 @media (max-width: 40rem) {
-  .Document-Breadcrumbs li:not(:last-child) {
+  .Document-Breadcrumbs li:not(:last-child):not(.Document-Exclude):not(.Document-Exclude *) {
     display: none;
   }
 }
