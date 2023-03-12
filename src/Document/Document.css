@@ -265,19 +265,21 @@
   }
 }
 
-.Document-Body {
+.Document-Body, body.Document {
   background-color: var(--bg-color);
   color: var(--color);
   margin: 0;
 }
 
 /* Section */
-.Document_page {
+.Document-Body .Document,
+body.Document main {
   max-width: 40rem;
   padding: 0 var(--size-l) var(--size-6xl);
   margin: 0 auto;
 }
-.Document {
+.Document,
+body.Document main {
   --size: var(--size-m);
   --line-gap: var(--multiplier-l);
 }
