@@ -470,6 +470,12 @@ body.Document main {
   background-color: var(--color);
   border-radius: calc(var(--size) * var(--multiplier-s));
 }
+.Document figure > button:first-child:last-child:not(.Document-Exclude):not(.Document-Exclude *),
+.Document figure > .Document-Button:first-child:last-child {
+  --margin-top: var(--size);
+  padding-bottom: var(--size);
+}
+
 /* Code */
 .Document pre:not(.Document-Exclude):not(.Document-Exclude *) {
   color: var(--light-1);
