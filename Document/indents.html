@@ -35,8 +35,8 @@
         Styling text document is mostly about fonts and indents. Sounds pretty simple but this
         little complexity is enough for having problems. The main difficulty is that the indent
         specified by margin CSS property is the indent between text lines that already contain
-        font-specific gaps. And those who will read the document will not be able to recognise this
-        indent because there aro no visual designation of line-height but what is recognisable is
+        font-specific gaps. And those who will read the document will not be able to recognize this
+        indent because there are no visual designation of line-height but what is recognizable is
         the indent between baseline of text above and meanline of text below.
       </p>
       <figure>
@@ -44,11 +44,11 @@
         <figcaption>
           a) the indent that can be controlled through margin;
           <br />
-          b) the indent that person can recognise
+          b) the indent that person can recognize
         </figcaption>
       </figure>
       <p>
-        So I desided to indent the text by those visual lines in Document.css and for the same
+        So I decided to indent the text by those visual lines in Document.css and for the same
         reason the better way of sizing the font is to specify the x-size, not the font-size.
       </p>
 
@@ -56,12 +56,12 @@
       <p>
         Choosing the size of font or size of indent is always the torment especially for
         non-designer developers like me. Should this header be the size of 20px or 24px? It always
-        hard to deside. Fortunately, same problem has been successfully solved for the tasks
+        hard to decide. Fortunately, same problem has been successfully solved for the tasks
         estimating in Agile — using Fibonacci sequence in estimates. Choosing between 21 and 34 is
-        easier than choosing between 20 and 24. And to make things even easier, I desided to use not
+        easier than choosing between 20 and 24. And to make things even easier, I decided to use not
         the Fibonacci sequence but golden ratio sequence. They are very similar but golden ratio
         makes every next value to be higher than the previous by the same ratio (x1.618) and it
-        easier to calculete.
+        easier to calculate.
       </p>
       <figure>
         <img src="images/sizes.png" width="520" height="110" />
@@ -113,14 +113,15 @@
         <figcaption>just drag the ruler to check if given indent is matching its size</figcaption>
       </figure>
       <p>
-        On this very page you can toggle ruller by clicking the button below:
+        On this very page you can toggle rulers by clicking the button below. Unfortunately, do not
+        work on touchscreens.
       </p>
       <figure>
         <button
           onclick="document.querySelector('.Document-Rulers')?.classList.toggle('Document-Rulers_hiddent')"
           style="--size: var(--size-l);"
         >
-          Toggle rullers
+          Toggle rulers
         </button>
       </figure>
     </main>

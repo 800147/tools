@@ -32,17 +32,17 @@
       <h2>Guide</h2>
 
       <section>
-        <h3>Initialisation</h3>
+        <h3>Initialization</h3>
         <p>After initialisation block classname is added to element.</p>
         <pre><code class="language-javascript">// new ModController(htmlElement, bemBlockOrElementName)
 
-// html:
+// HTML:
 // &lt;div id="block">&lt;/div>
 
 const block = document.getElementById('block');
 const blockModController = new ModController(block, 'Block');
 
-// html:
+// HTML:
 // &lt;div id="block" class="Block">&lt;/div></code></pre>
       </section>
       <section>
@@ -52,19 +52,19 @@ const blockModController = new ModController(block, 'Block');
         </p>
         <pre><code class="language-javascript">// setMod(name, value, redraw)
 
-// html:
+// HTML:
 // &lt;div id="block" class="Block">&lt;/div>
 
 blockModController.setMod('big');
 blockModController.setMod('color', 'red');
 
-// html:
+// HTML:
 // &lt;div id="block" class="Block Block_big Block_color_red">&lt;/div>
 
 blockModController.setMod('small'); // will not rewrite Block_big classname
 blockModController.setMod('color', 'green'); // will rewrite Block_color_red classname
 
-// html:
+// HTML:
 // &lt;div id="block" class="Block Block_big Block_small Block_color_green">&lt;/div></code></pre>
       </section>
       <section>
@@ -73,17 +73,17 @@ blockModController.setMod('color', 'green'); // will rewrite Block_color_red cla
           Set value to false or null to remove the modificator. "0" number or undefined will not
           remove the modificator.
         </p>
-        <pre><code class="language-javascript">// html:
+        <pre><code class="language-javascript">// HTML:
 // &lt;div id="block" class="Block">&lt;/div>
 
 blockModController.setMod('count', 0);
 
-// html:
+// HTML:
 // &lt;div id="block" class="Block Block_count_0">&lt;/div>
 
 blockModController.setMod('count', null);
 
-// html:
+// HTML:
 // &lt;div id="block" class="Block">&lt;/div></code></pre>
       </section>
       <section>
@@ -93,7 +93,7 @@ blockModController.setMod('count', null);
           animation that related to it. For that purpose you can set redraw argument in setMod
           function to true.
         </p>
-        <pre><code class="language-javascript">// css:
+        <pre><code class="language-javascript">// CSS:
 // @keyframes jump { 50% { bottom: 0.5rem; } }
 // .Block_jumping {
 //   position: relative;
@@ -114,18 +114,18 @@ setInterval(() => {
         </p>
         <pre><code class="language-javascript">// removeAllMods()
 
-// html:
+// HTML:
 // &lt;div id="block" class="Block">&lt;/div>
 
 blockModController.setMod('big');
 blockModController.setMod('color', 'red');
 
-// html:
+// HTML:
 // &lt;div id="block" class="Block Block_big Block_color_red">&lt;/div>
 
 blockModController.removeAllMods();
 
-// html:
+// HTML:
 // &lt;div id="block" class="Block">&lt;/div></code></pre>
       </section>
     </section>
