@@ -1,3 +1,5 @@
+/* About Document.css: https://800147.github.io/tools/Document/ */
+
 @font-face {
   font-family: 'PT Serif';
   src: url('./fonts/pt-serif_regular.woff2') format("woff2");
@@ -146,7 +148,7 @@
   ascent-override: 106%;
 }
 
-/* styles for highlight.js https://highlightjs.org/usage/ */
+/* colors for highlight.js https://highlightjs.org/usage/ */
 .hljs {
   color: var(--light-2);
 }
@@ -578,24 +580,37 @@ body.Document main {
   }
 }
 
-/* For indents testing */
-.Rulers {
-  /* display: none; */
-}
-.Rulers-Ruler {
+/* For indents testing ( https://800147.github.io/tools/Document/indents ) */
+.Document-Rulers {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   margin: 0 auto;
-  max-width: calc(40rem + var(--size-l) * 2);
+  --rulers-max-width: calc(40rem + var(--size-l) * 2);
+  max-width: var(--rulers-max-width);
+}
+.Document-Ruler {
+  position: absolute;
+  top: 0;
+  --width: calc(var(--rulers-max-width) / 6);
+  right: calc((100% - var(--width)) / 5 * var(--n));
+  width: var(--width);
   height: var(--size);
-  background-color: rgba(255, 0, 255, 0.15);
+  background-color: var(--color);
   pointer-events: all;
   cursor: grab;
 }
+
+.Document-Ruler_4xl { --n: 0; --size: var(--size-4xl); --color: var(--purple-5); }
+.Document-Ruler_3xl { --n: 1; --size: var(--size-3xl); --color: var(--blue-5); }
+.Document-Ruler_2xl { --n: 2; --size: var(--size-2xl); --color: var(--green-5); }
+.Document-Ruler_xl { --n: 3; --size: var(--size-xl); --color: var(--yellow-5); }
+.Document-Ruler_l { --n: 4; --size: var(--size-l); --color: var(--orange-5); }
+.Document-Ruler_m { --n: 5; --size: var(--size-m); --color: var(--red-5); }
+
 @media (max-width: 42rem) {
-  .Rulers-Ruler {
+  .Document-Rulers {
     max-width: unset;
   }
 }

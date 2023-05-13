@@ -8,6 +8,16 @@
     <link rel="icon" type="image/svg+xml" href="../img/favicon.svg" />
     <link rel="icon" type="image/png" href="../img/favicon.png" />
     <link rel="stylesheet" href="../src/Document/Document.css" />
+    <script type="module">
+      // https://highlightjs.org/usage/
+      import hljs from 'https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/es/highlight.min.js';
+      hljs.highlightAll();
+    </script>
+    <style>
+      .Document-Rulers_hiddent {
+        display: none;
+      }
+    </style>
   </head>
   <body class="Document">
     <nav class="Document-Breadcrumbs">
@@ -83,6 +93,44 @@
       <figure>
         <img src="images/compositionExample.png" width="520" height="130" />
       </figure>
+
+      <h2>Testing</h2>
+      <p>
+        There is a way to check this indents that was used in development of that styles. If you add
+        following code to HTML, draggable rulers will appear. You can drag them and check if indent
+        is following the grid.
+      </p>
+      <pre><code class="language-html">&lt;div class="Document-Rulers">
+  &lt;div class="Document-Ruler Document-Ruler_4xl" draggable="true">&lt;/div>
+  &lt;div class="Document-Ruler Document-Ruler_3xl" draggable="true">&lt;/div>
+  &lt;div class="Document-Ruler Document-Ruler_2xl" draggable="true">&lt;/div>
+  &lt;div class="Document-Ruler Document-Ruler_xl" draggable="true">&lt;/div>
+  &lt;div class="Document-Ruler Document-Ruler_l" draggable="true">&lt;/div>
+  &lt;div class="Document-Ruler Document-Ruler_m" draggable="true">&lt;/div>
+&lt;/div></code></pre>
+      <figure>
+        <img src="images/rulers.png" width="520" height="300" />
+        <figcaption>just drag the ruler to check if given indent is matching its size</figcaption>
+      </figure>
+      <p>
+        On this very page you can toggle ruller by clicking the button below:
+      </p>
+      <figure>
+        <button
+          onclick="document.querySelector('.Document-Rulers')?.classList.toggle('Document-Rulers_hiddent')"
+          style="--size: var(--size-l);"
+        >
+          Toggle rullers
+        </button>
+      </figure>
     </main>
+    <div class="Document-Rulers Document-Rulers_hiddent">
+      <div class="Document-Ruler Document-Ruler_4xl" draggable="true"></div>
+      <div class="Document-Ruler Document-Ruler_3xl" draggable="true"></div>
+      <div class="Document-Ruler Document-Ruler_2xl" draggable="true"></div>
+      <div class="Document-Ruler Document-Ruler_xl" draggable="true"></div>
+      <div class="Document-Ruler Document-Ruler_l" draggable="true"></div>
+      <div class="Document-Ruler Document-Ruler_m" draggable="true"></div>
+    </div>
   </body>
 </html>
