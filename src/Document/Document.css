@@ -1,50 +1,50 @@
 /* About Document.css: https://800147.github.io/tools/Document/ */
 
 @font-face {
-  font-family: 'PT Serif';
-  src: url('./fonts/pt-serif_regular.woff2') format("woff2");
+  font-family: "PT Serif";
+  src: url("./fonts/pt-serif_regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'PT Serif';
-  src: url('./fonts/pt-serif_bold.woff2') format("woff2");
+  font-family: "PT Serif";
+  src: url("./fonts/pt-serif_bold.woff2") format("woff2");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'PT Serif';
-  src: url('./fonts/pt-serif_italic.woff2') format("woff2");
+  font-family: "PT Serif";
+  src: url("./fonts/pt-serif_italic.woff2") format("woff2");
   font-weight: normal;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
-  font-family: 'PT Serif';
-  src: url('./fonts/pt-serif_bold-italic.woff2') format("woff2");
+  font-family: "PT Serif";
+  src: url("./fonts/pt-serif_bold-italic.woff2") format("woff2");
   font-weight: bold;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
-  font-family: 'PT Serif Caption';
-  src: url('./fonts/pt-serif_caption-regular.woff2') format("woff2");
+  font-family: "PT Serif Caption";
+  src: url("./fonts/pt-serif_caption-regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'PT Sans';
-  src: url('./fonts/pt-sans_regular.woff2') format("woff2");
+  font-family: "PT Sans";
+  src: url("./fonts/pt-sans_regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'JetBrains Mono';
-  src: url('./fonts/JetBrainsMono-Regular.woff2') format("woff2");
+  font-family: "JetBrains Mono";
+  src: url("./fonts/JetBrainsMono-Regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -53,7 +53,7 @@
 /* Font fallbacks */
 @font-face {
   font-family: fallback-for-PT-Serif-1;
-  src: local('Liberation Serif');
+  src: local("Liberation Serif");
   font-weight: normal;
   font-style: normal;
   size-adjust: 108%;
@@ -61,7 +61,7 @@
 }
 @font-face {
   font-family: fallback-for-PT-Serif-2;
-  src: local('Times New Roman');
+  src: local("Times New Roman");
   font-weight: normal;
   font-style: normal;
   size-adjust: 112%;
@@ -69,7 +69,7 @@
 }
 @font-face {
   font-family: fallback-for-PT-Serif-Caption-1;
-  src: local('Liberation Serif');
+  src: local("Liberation Serif");
   font-weight: normal;
   font-style: normal;
   size-adjust: 114%;
@@ -77,7 +77,7 @@
 }
 @font-face {
   font-family: fallback-for-PT-Serif-Caption-2;
-  src: local('Times New Roman');
+  src: local("Times New Roman");
   font-weight: normal;
   font-style: normal;
   size-adjust: 117%;
@@ -85,7 +85,7 @@
 }
 @font-face {
   font-family: fallback-for-PT-Serif-Bold-1;
-  src: local('Liberation Serif Bold');
+  src: local("Liberation Serif Bold");
   font-weight: bold;
   font-style: normal;
   size-adjust: 109%;
@@ -93,7 +93,7 @@
 }
 @font-face {
   font-family: fallback-for-PT-Serif-Bold-2;
-  src: local('Times New Roman Bold');
+  src: local("Times New Roman Bold");
   font-weight: bold;
   font-style: normal;
   size-adjust: 109%;
@@ -101,7 +101,7 @@
 }
 @font-face {
   font-family: fallback-for-JetBrains-Mono-1;
-  src: local('Liberation Mono');
+  src: local("Liberation Mono");
   font-weight: normal;
   font-style: normal;
   size-adjust: 105%;
@@ -109,7 +109,7 @@
 }
 @font-face {
   font-family: fallback-for-JetBrains-Mono-2;
-  src: local('Courier New');
+  src: local("Courier New");
   font-weight: normal;
   font-style: normal;
   size-adjust: 129%;
@@ -117,7 +117,7 @@
 }
 @font-face {
   font-family: fallback-for-PT-Sans-1;
-  src: local('Liberation Sans');
+  src: local("Liberation Sans");
   font-weight: normal;
   font-style: normal;
   size-adjust: 93%;
@@ -125,7 +125,7 @@
 }
 @font-face {
   font-family: fallback-for-PT-Sans-1;
-  src: local('Liberation Sans Italic');
+  src: local("Liberation Sans Italic");
   font-weight: normal;
   font-style: italic;
   size-adjust: 93%;
@@ -133,7 +133,7 @@
 }
 @font-face {
   font-family: fallback-for-PT-Sans-2;
-  src: local('Arial');
+  src: local("Arial");
   font-weight: normal;
   font-style: normal;
   size-adjust: 95%;
@@ -141,7 +141,7 @@
 }
 @font-face {
   font-family: fallback-for-PT-Sans-2;
-  src: local('Arial Italic');
+  src: local("Arial Italic");
   font-weight: normal;
   font-style: italic;
   size-adjust: 95%;
@@ -235,7 +235,7 @@
   --multiplier-2xl: 4.2360679775;
   --multiplier-3xl: 6.8541019663;
   --multiplier-4xl: 11.0901699438;
-  --multiplier-5xl: 17.9442719100;
+  --multiplier-5xl: 17.94427191;
   --multiplier-6xl: 29.0344418538;
 
   --size-xs: 0.1909830056rem;
@@ -307,14 +307,28 @@ body.Document main {
     max-width: unset;
   }
 }
-:where(.Document :is(section, p, li, h1, h2, h3, h4, pre, q, ul, figcaption):not(.Document-Exclude):not(.Document-Exclude *), .Document-Text) {
+:where(
+    .Document
+      :is(section, p, li, h1, h2, h3, h4, pre, q, ul, figcaption):not(
+        .Document-Exclude
+      ):not(.Document-Exclude *),
+    .Document-Text
+  ) {
   /* make --margin-top non-inherited property */
   --margin-top: var(--size-xl);
 }
-.Document li > ul:not(:is(section, p, h1, h2, h3, h4, pre, q, ul) + *):not(.Document-Exclude):not(.Document-Exclude *) {
+.Document
+  li
+  > ul:not(:is(section, p, h1, h2, h3, h4, pre, q, ul) + *):not(
+    .Document-Exclude
+  ):not(.Document-Exclude *) {
   --margin-top: calc(var(--offset-bottom) * -1);
 }
-.Document li > :is(section, p, h1, h2, h3, h4, pre, q):not(:is(section, p, h1, h2, h3, h4, pre, q, ul) + *):not(.Document-Exclude):not(.Document-Exclude *) {
+.Document
+  li
+  > :is(section, p, h1, h2, h3, h4, pre, q):not(
+    :is(section, p, h1, h2, h3, h4, pre, q, ul) + *
+  ):not(.Document-Exclude):not(.Document-Exclude *) {
   --margin-top: calc(var(--size-xl) + var(--offset-top) - var(--offset-bottom));
 }
 .Document section:not(.Document-Exclude):not(.Document-Exclude *) {
@@ -325,24 +339,34 @@ body.Document main {
 }
 
 /* Text */
-.Document :is(p, li, h1, h2, h3, h4, pre, q, code, figcaption):not(.Document-Exclude):not(.Document-Exclude *),
+.Document
+  :is(p, li, h1, h2, h3, h4, pre, q, code, figcaption):not(
+    .Document-Exclude
+  ):not(.Document-Exclude *),
 .Document-Breadcrumbs ul:not(.Document-Exclude):not(.Document-Exclude *),
 .Document button:not(.Document-Exclude):not(.Document-Exclude *),
 .Document-Text,
 .Document-Button {
   font-size: calc(var(--size) * var(--size-multiplier));
   line-height: calc((var(--line-gap) + 1) / var(--size-multiplier));
-  --offset-bottom: calc((var(--line-gap) + 1) / var(--size-multiplier) * -1em + var(--size) - var(--offset-top));
+  --offset-bottom: calc(
+    (var(--line-gap) + 1) / var(--size-multiplier) * -1em + var(--size) -
+      var(--offset-top)
+  );
   margin-top: calc(var(--offset-top) + var(--margin-top));
   margin-bottom: calc(var(--offset-bottom));
 }
-.Document :is(p, li, h1, h2, h3, h4, q):not(.Document-Exclude):not(.Document-Exclude *) {
+.Document
+  :is(p, li, h1, h2, h3, h4, q):not(.Document-Exclude):not(
+    .Document-Exclude *
+  ) {
   word-break: break-word;
 }
 .Document :is(p, li):not(.Document-Exclude):not(.Document-Exclude *),
 .Document-Text,
 .Document-Text_serif {
-  font-family: 'PT Serif', fallback-for-PT-Serif-1, fallback-for-PT-Serif-2, serif;
+  font-family: "PT Serif", fallback-for-PT-Serif-1, fallback-for-PT-Serif-2,
+    serif;
   font-weight: normal;
   text-transform: none;
   --size-multiplier: 2;
@@ -350,14 +374,16 @@ body.Document main {
 }
 .Document :is(h1, h2, h3):not(.Document-Exclude):not(.Document-Exclude *),
 .Document-Text_serifCaption {
-  font-family: 'PT Serif Caption', fallback-for-PT-Serif-Caption-1, fallback-for-PT-Serif-Caption-2, serif;
+  font-family: "PT Serif Caption", fallback-for-PT-Serif-Caption-1,
+    fallback-for-PT-Serif-Caption-2, serif;
   font-weight: normal;
   text-transform: none;
   --size-multiplier: 1.904761905;
   --offset-top: -0.538em;
 }
 .Document h4:not(.Document-Exclude):not(.Document-Exclude *) {
-  font-family: 'PT Serif', fallback-for-PT-Serif-Bold-1, fallback-for-PT-Serif-Bold-2, serif;
+  font-family: "PT Serif", fallback-for-PT-Serif-Bold-1,
+    fallback-for-PT-Serif-Bold-2, serif;
   font-weight: bold;
   text-transform: none;
   --size-multiplier: 2;
@@ -365,7 +391,8 @@ body.Document main {
 }
 .Document :is(pre, code):not(.Document-Exclude):not(.Document-Exclude *),
 .Document-Text_monotype {
-  font-family: 'JetBrains Mono', fallback-for-JetBrains-Mono-1, fallback-for-JetBrains-Mono-2, monospace;
+  font-family: "JetBrains Mono", fallback-for-JetBrains-Mono-1,
+    fallback-for-JetBrains-Mono-2, monospace;
   font-weight: normal;
   text-transform: none;
   --size-multiplier: 1.82;
@@ -373,18 +400,21 @@ body.Document main {
   font-variant-ligatures: none;
 }
 .Document-Breadcrumbs:not(.Document-Exclude):not(.Document-Exclude *),
-.Document-Breadcrumbs :is(ul, li):not(.Document-Exclude):not(.Document-Exclude *),
+.Document-Breadcrumbs
+  :is(ul, li):not(.Document-Exclude):not(.Document-Exclude *),
 .Document button:not(.Document-Exclude):not(.Document-Exclude *),
 .Document-Text_sansSerif,
 .Document .Document-Button {
-  font-family: 'PT Sans', fallback-for-PT-Sans-1, fallback-for-PT-Sans-2, sans-serif;
+  font-family: "PT Sans", fallback-for-PT-Sans-1, fallback-for-PT-Sans-2,
+    sans-serif;
   font-weight: normal;
   text-transform: none;
   --size-multiplier: 2;
   --offset-top: -0.526em;
 }
 .Document figcaption:not(.Document-Exclude):not(.Document-Exclude *) {
-  font-family: 'PT Sans', fallback-for-PT-Sans-1, fallback-for-PT-Sans-2, sans-serif;
+  font-family: "PT Sans", fallback-for-PT-Sans-1, fallback-for-PT-Sans-2,
+    sans-serif;
   font-weight: normal;
   text-transform: none;
   font-style: italic;
@@ -393,7 +423,9 @@ body.Document main {
 }
 
 /* Heading */
-.Document :is(h1, h2, h3, h4) + *:not(.Document-Exclude):not(.Document-Exclude *) {
+.Document
+  :is(h1, h2, h3, h4)
+  + *:not(.Document-Exclude):not(.Document-Exclude *) {
   --margin-top: var(--size-2xl);
 }
 .Document h1:not(.Document-Exclude):not(.Document-Exclude *) {
@@ -419,6 +451,18 @@ body.Document main {
   color: var(--strong-color);
 }
 
+/* Hr */
+.Document hr:not(.Document-Exclude):not(.Document-Exclude *) {
+  padding: 0;
+  margin: 0;
+  border: calc(var(--size-xs) / 2) solid var(--strong-color);
+  margin-top: var(--margin-top);
+  --margin-top: var(--size-2xl);
+}
+.Document hr + *:not(.Document-Exclude):not(.Document-Exclude *) {
+  --margin-top: var(--size-2xl);
+}
+
 /* List */
 .Document :is(ul, ol):not(.Document-Exclude):not(.Document-Exclude *) {
   padding: 0;
@@ -433,7 +477,7 @@ body.Document main {
   page-break-inside: avoid;
 }
 .Document ul > li:not(.Document-Exclude):not(.Document-Exclude *)::before {
-  content: '•';
+  content: "•";
   position: absolute;
   right: calc(100% + 1ch);
   top: 0;
@@ -466,7 +510,7 @@ body.Document main {
 }
 .Document button:not(.Document-Exclude):not(.Document-Exclude *)::before,
 .Document-Button::before {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   left: 0;
@@ -477,7 +521,11 @@ body.Document main {
   background-color: var(--color);
   border-radius: calc(var(--size) * var(--multiplier-s));
 }
-.Document figure > button:first-child:last-child:not(.Document-Exclude):not(.Document-Exclude *),
+.Document
+  figure
+  > button:first-child:last-child:not(.Document-Exclude):not(
+    .Document-Exclude *
+  ),
 .Document figure > .Document-Button:first-child:last-child {
   --margin-top: var(--size);
   padding-bottom: var(--size);
@@ -556,18 +604,26 @@ body.Document main {
     max-width: unset;
   }
 }
-.Document-Breadcrumbs > ul > li:not(.Document-Exclude):not(.Document-Exclude *) {
+.Document-Breadcrumbs
+  > ul
+  > li:not(.Document-Exclude):not(.Document-Exclude *) {
   display: inline-block;
   --margin-top: 0px;
 }
-.Document-Breadcrumbs > ul > li:not(.Document-Exclude):not(.Document-Exclude *)::before {
+.Document-Breadcrumbs
+  > ul
+  > li:not(.Document-Exclude):not(.Document-Exclude *)::before {
   display: none;
 }
-.Document-Breadcrumbs > ul > li > a:not(.Document-Exclude):not(.Document-Exclude *)::after {
+.Document-Breadcrumbs
+  > ul
+  > li
+  > a:not(.Document-Exclude):not(.Document-Exclude *)::after {
   display: inline;
-  content: ' /'
+  content: " /";
 }
-.Document-Breadcrumbs :is(a, a:visited):not(.Document-Exclude):not(.Document-Exclude *) {
+.Document-Breadcrumbs
+  :is(a, a:visited):not(.Document-Exclude):not(.Document-Exclude *) {
   color: var(--weak-color);
   text-decoration: none;
 }
@@ -575,7 +631,8 @@ body.Document main {
   text-decoration: underline;
 }
 @media (max-width: 42rem) {
-  .Document-Breadcrumbs li:not(:last-child):not(.Document-Exclude):not(.Document-Exclude *) {
+  .Document-Breadcrumbs
+    li:not(:last-child):not(.Document-Exclude):not(.Document-Exclude *) {
     display: none;
   }
 }
@@ -602,12 +659,36 @@ body.Document main {
   cursor: grab;
 }
 
-.Document-Ruler_4xl { --n: 0; --size: var(--size-4xl); --color: var(--purple-5); }
-.Document-Ruler_3xl { --n: 1; --size: var(--size-3xl); --color: var(--blue-5); }
-.Document-Ruler_2xl { --n: 2; --size: var(--size-2xl); --color: var(--green-5); }
-.Document-Ruler_xl { --n: 3; --size: var(--size-xl); --color: var(--yellow-5); }
-.Document-Ruler_l { --n: 4; --size: var(--size-l); --color: var(--orange-5); }
-.Document-Ruler_m { --n: 5; --size: var(--size-m); --color: var(--red-5); }
+.Document-Ruler_4xl {
+  --n: 0;
+  --size: var(--size-4xl);
+  --color: var(--purple-5);
+}
+.Document-Ruler_3xl {
+  --n: 1;
+  --size: var(--size-3xl);
+  --color: var(--blue-5);
+}
+.Document-Ruler_2xl {
+  --n: 2;
+  --size: var(--size-2xl);
+  --color: var(--green-5);
+}
+.Document-Ruler_xl {
+  --n: 3;
+  --size: var(--size-xl);
+  --color: var(--yellow-5);
+}
+.Document-Ruler_l {
+  --n: 4;
+  --size: var(--size-l);
+  --color: var(--orange-5);
+}
+.Document-Ruler_m {
+  --n: 5;
+  --size: var(--size-m);
+  --color: var(--red-5);
+}
 
 @media (max-width: 42rem) {
   .Document-Rulers {
