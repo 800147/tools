@@ -309,7 +309,7 @@ body.Document main {
 }
 :where(
     .Document
-      :is(section, p, li, h1, h2, h3, h4, pre, q, ul, figcaption):not(
+      :is(section, p, li, h1, h2, h3, h4, pre, q, ul, figcaption, table):not(
         .Document-Exclude
       ):not(.Document-Exclude *),
     .Document-Text
@@ -340,7 +340,7 @@ body.Document main {
 
 /* Text */
 .Document
-  :is(p, li, h1, h2, h3, h4, pre, q, code, figcaption):not(
+  :is(p, li, h1, h2, h3, h4, pre, q, code, figcaption, td, th):not(
     .Document-Exclude
   ):not(.Document-Exclude *),
 .Document-Breadcrumbs ul:not(.Document-Exclude):not(.Document-Exclude *),
@@ -362,7 +362,7 @@ body.Document main {
   ) {
   word-break: break-word;
 }
-.Document :is(p, li):not(.Document-Exclude):not(.Document-Exclude *),
+.Document :is(p, li, td):not(.Document-Exclude):not(.Document-Exclude *),
 .Document-Text,
 .Document-Text_serif {
   font-family: "PT Serif", fallback-for-PT-Serif-1, fallback-for-PT-Serif-2,
@@ -381,7 +381,7 @@ body.Document main {
   --size-multiplier: 1.904761905;
   --offset-top: -0.538em;
 }
-.Document h4:not(.Document-Exclude):not(.Document-Exclude *) {
+.Document :is(h4, th):not(.Document-Exclude):not(.Document-Exclude *) {
   font-family: "PT Serif", fallback-for-PT-Serif-Bold-1,
     fallback-for-PT-Serif-Bold-2, serif;
   font-weight: bold;
@@ -481,6 +481,19 @@ body.Document main {
   position: absolute;
   right: calc(100% + 1ch);
   top: 0;
+}
+
+/* Table */
+.Document table:not(.Document-Exclude):not(.Document-Exclude *) {
+  margin-top: var(--margin-top);
+  border-spacing: 0 var(--size-xs);
+  background-color: var(--weak-color);
+}
+.Document :is(td, th):not(.Document-Exclude):not(.Document-Exclude *) {
+  text-align: left;
+  padding: var(--size-s) var(--size-m) var(--size-m);
+  vertical-align: top;
+  background-color: var(--bg-color);
 }
 
 /* Link */
