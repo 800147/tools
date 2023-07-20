@@ -320,6 +320,8 @@ body.Document main {
         h2,
         h3,
         h4,
+        h5,
+        h6,
         pre,
         blockquote,
         ul,
@@ -333,15 +335,15 @@ body.Document main {
 }
 .Document
   li
-  > ul:not(:is(section, p, h1, h2, h3, h4, pre, blockquote, ul) + *):not(
-    .Document-Exclude
-  ):not(.Document-Exclude *) {
+  > ul:not(
+    :is(section, p, h1, h2, h3, h4, h5, h6, pre, blockquote, ul) + *
+  ):not(.Document-Exclude):not(.Document-Exclude *) {
   --margin-top: calc(var(--offset-bottom) * -1);
 }
 .Document
   li
-  > :is(section, p, h1, h2, h3, h4, pre, blockquote):not(
-    :is(section, p, h1, h2, h3, h4, pre, blockquote, ul) + *
+  > :is(section, p, h1, h2, h3, h4, h5, h6, pre, blockquote):not(
+    :is(section, p, h1, h2, h3, h4, h5, h6, pre, blockquote, ul) + *
   ):not(.Document-Exclude):not(.Document-Exclude *) {
   --margin-top: calc(var(--size-xl) + var(--offset-top) - var(--offset-bottom));
 }
@@ -354,9 +356,23 @@ body.Document main {
 
 /* Text */
 .Document
-  :is(p, li, h1, h2, h3, h4, pre, q, blockquote, code, figcaption, td, th):not(
-    .Document-Exclude
-  ):not(.Document-Exclude *),
+  :is(
+    p,
+    li,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    pre,
+    q,
+    blockquote,
+    code,
+    figcaption,
+    td,
+    th
+  ):not(.Document-Exclude):not(.Document-Exclude *),
 .Document-Breadcrumbs ul:not(.Document-Exclude):not(.Document-Exclude *),
 .Document button:not(.Document-Exclude):not(.Document-Exclude *),
 .Document-Text,
@@ -371,7 +387,7 @@ body.Document main {
   margin-bottom: var(--offset-bottom);
 }
 .Document
-  :is(p, li, h1, h2, h3, h4, blockquote):not(.Document-Exclude):not(
+  :is(p, li, h1, h2, h3, h4, h5, h6, blockquote):not(.Document-Exclude):not(
     .Document-Exclude *
   ) {
   word-break: break-word;
@@ -387,7 +403,8 @@ body.Document main {
   --size-multiplier: 2;
   --offset-top: -0.532em;
 }
-.Document :is(h1, h2, h3):not(.Document-Exclude):not(.Document-Exclude *),
+.Document
+  :is(h1, h2, h3, h5, h6):not(.Document-Exclude):not(.Document-Exclude *),
 .Document-Text_serifCaption {
   font-family: "PT Serif Caption", fallback-for-PT-Serif-Caption-1,
     fallback-for-PT-Serif-Caption-2, serif;
@@ -439,7 +456,7 @@ body.Document main {
 
 /* Heading */
 .Document
-  :is(h1, h2, h3, h4)
+  :is(h1, h2, h3, h4, h5, h6)
   + *:not(.Document-Exclude):not(.Document-Exclude *) {
   --margin-top: var(--size-2xl);
 }
@@ -464,6 +481,15 @@ body.Document main {
   --size: var(--size-m);
   --margin-top: var(--size-3xl);
   color: var(--strong-color);
+}
+/* Just do not use these two lol */
+.Document h5:not(.Document-Exclude):not(.Document-Exclude *) {
+  --size: var(--size-s);
+  --margin-top: var(--size-3xl);
+}
+.Document h6:not(.Document-Exclude):not(.Document-Exclude *) {
+  --size: var(--size-xs);
+  --margin-top: var(--size-3xl);
 }
 
 /* Hr */
