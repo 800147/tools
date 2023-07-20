@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../src/Document/Document.css" />
     <script type="module">
       // https://highlightjs.org/usage/
-      import hljs from 'https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/es/highlight.min.js';
+      import hljs from "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/es/highlight.min.js";
       hljs.highlightAll();
     </script>
   </head>
@@ -28,9 +28,9 @@
 
       <h2>About</h2>
       <p>
-        Document.css — is styles that are applied to any element inside the one with
-        "<code>Document</code>" class. It do not do much but what it does is enough for not to think
-        about styles of your document:
+        Document.css — is styles that are applied to any element inside the one
+        with "<code>Document</code>" class. It do not do much but what it does
+        is enough for not to think about styles of your document:
       </p>
       <ul>
         <li>Pretty fonts with adjusted fallbacks;</li>
@@ -39,20 +39,23 @@
         <li>Some other stuff.</li>
       </ul>
       <p>
-        I made this stylesheet for this exact site. I wanted to describe my stuff on Github without
-        all that installing-building-bundling process that gives us all our favorite components
-        architecture but requires to add extra actions to publish process, requires to keep all the
-        packages updated and makes it hard to change the same thing in different projects. So here
-        it is — the stylesheet that just prettifies vanilla HTML markup that never gets old. I just
-        write one HTML file for each page that do not require any components or other files (except
-        this stylesheet), that can be deployed by just moving the file to HTTP server (hello, Github
-        pages!) and updating that one style file cause updates in all pages that uses it. The result
-        you can see in this very page you are reading right now.
+        I made this stylesheet for this exact site. I wanted to describe my
+        stuff on Github without all that installing-building-bundling process
+        that gives us all our favorite components architecture but requires to
+        add extra actions to publish process, requires to keep all the packages
+        updated and makes it hard to change the same thing in different
+        projects. So here it is — the stylesheet that just prettifies vanilla
+        HTML markup that never gets old. I just write one HTML file for each
+        page that do not require any components or other files (except this
+        stylesheet), that can be deployed by just moving the file to HTTP server
+        (hello, Github pages!) and updating that one style file cause updates in
+        all pages that uses it. The result you can see in this very page you are
+        reading right now.
       </p>
       <h3>Sizes and indents</h3>
       <p>
-        The interesting part of this styles is how they handles sizes and indents. You can read
-        about it on <a href="./indents">indents page</a>.
+        The interesting part of this styles is how they handles sizes and
+        indents. You can read about it on <a href="./indents">indents page</a>.
       </p>
 
       <h2>Guide</h2>
@@ -60,9 +63,10 @@
       <h3>Connection</h3>
       <p>
         To make it work you should add a stylesheet link to
-        "<code>https://800147.github.io/tools/src/Document/Document.css</code>" and add a
-        "<code>Document</code>" class to parent element. If you choose your body tag as a document
-        root, it will also limit the width of your main tag to make it more readable.
+        "<code>https://800147.github.io/tools/src/Document/Document.css</code>"
+        and add a "<code>Document</code>" class to parent element. If you choose
+        your body tag as a document root, it will also limit the width of your
+        main tag to make it more readable.
       </p>
       <pre><code class="language-html">&lt;!DOCTYPE html>
 &lt;html lang="en">
@@ -82,35 +86,38 @@
 &lt;/html></code></pre>
 
       <p>
-        And that's it! It really all you need to style your HTML document. Just make sure you use
-        proper tags for the content and Document.css will try to make it pretty.
+        And that's it! It really all you need to style your HTML document. Just
+        make sure you use proper tags for the content and Document.css will try
+        to make it pretty.
       </p>
 
       <h3>Supported tags</h3>
-      <p>
-        Here is the list of supported tags:
-      </p>
+      <p>Here is the list of supported tags:</p>
       <ul>
         <li>body</li>
         <li>main</li>
         <li>section</li>
         <li>h1, h2, h3, h4</li>
         <li>p</li>
-        <li>ul, ol, li</li>
+        <li>ul, ol</li>
         <li>a</li>
         <li>button</li>
         <li>code</li>
         <li>pre</li>
         <li>figure, img, figcaption</li>
+        <li>q, blockquote</li>
+        <li>table</li>
       </ul>
       <p>
-        You can check how all this look at the <a href="./example">example page</a>.
+        You can check how all this look at the
+        <a href="./example">example page</a>.
       </p>
 
       <h3>Breadcrumbs</h3>
       <p>
-        As a basic navigation solution there is a Breadcrumbs component. To add them to your page,
-        add an element with "<code>Document-Breadcrumbs</code>" class containing the list of
+        As a basic navigation solution there is a Breadcrumbs component. To add
+        them to your page, add an element with
+        "<code>Document-Breadcrumbs</code>" class containing the list of
         navigation links:
       </p>
       <pre><code class="language-html">&lt;body class="Document">
@@ -126,14 +133,15 @@
   &lt;/main>
 &lt;/body></code></pre>
       <p>
-        Breadcrumbs are always appear at the top of the page. When window width is small, only last
-        element is shown.
+        Breadcrumbs are always appear at the top of the page. When window width
+        is small, only last element is shown.
       </p>
 
       <h3>Button component</h3>
       <p>
-        If you want for some reason to style link as a button, you can do this by adding
-        "<code>Document-Button</code>" class to link (or other element):
+        If you want for some reason to style link as a button, you can do this
+        by adding "<code>Document-Button</code>" class to link (or other
+        element):
       </p>
       <pre><code class="language-html">&lt;section class="Document">
   &lt;p>
@@ -149,9 +157,10 @@
 
       <h3>Elements exclusion</h3>
       <p>
-        As any styles that related to tag names, Document.css can case problems with other styles
-        that usually do not expect basic elements styling. To prevent given elements from styling,
-        you can wrap them with element with "<code>Document-Exclude</code>" class.
+        As any styles that related to tag names, Document.css can case problems
+        with other styles that usually do not expect basic elements styling. To
+        prevent given elements from styling, you can wrap them with element with
+        "<code>Document-Exclude</code>" class.
       </p>
       <pre><code class="language-html">&lt;section class="Document">
   &lt;h1>Styled title&lt;/h1>
@@ -166,10 +175,14 @@
 
       <h3>Colors for highlightjs</h3>
       <p>
-        If you want to add syntax highlighting to code blocks, there are color bindings to classes
-        generated by
-        <a href="https://highlightjs.org/usage/" target="_blank" rel="noreferrer">highlightjs</a>.
-        Just connect the highlightjs library in proper way:
+        If you want to add syntax highlighting to code blocks, there are color
+        bindings to classes generated by
+        <a
+          href="https://highlightjs.org/usage/"
+          target="_blank"
+          rel="noreferrer"
+          >highlightjs</a
+        >. Just connect the highlightjs library in proper way:
       </p>
       <pre><code class="language-html">&lt;!DOCTYPE html>
 &lt;html lang="en">
@@ -193,13 +206,11 @@
 &lt;/html></code></pre>
 
       <h2>Sources</h2>
-      <p>
-        The sources can be found on Github:
-      </p>
+      <p>The sources can be found on Github:</p>
       <figure>
         <a
           class="Document-Button"
-          style="--size: var(--size-l);"
+          style="--size: var(--size-l)"
           href="https://github.com/800147/tools/tree/main/src/Document"
           target="_blank"
           rel="noreferrer"

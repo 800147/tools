@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../src/Document/Document.css" />
     <script type="module">
       // https://highlightjs.org/usage/
-      import hljs from 'https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/es/highlight.min.js';
+      import hljs from "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/es/highlight.min.js";
       hljs.highlightAll();
     </script>
   </head>
@@ -31,9 +31,11 @@
       <h4>Header 4</h4>
 
       <p>
-        Paragraph, containing text with different styles such as <b>bold</b>, <i>italic</i>,
-        <b><i>bold italic</i></b>, and also inline elements as <code>code</code>,
-        <a href="">link</a> and <button onclick="alert('button was clicked');">button</button>.
+        Paragraph, containing text with different styles such as <b>bold</b>,
+        <i>italic</i>, <b><i>bold italic</i></b
+        >, and also inline elements as <code>code</code>, <a href="">link</a>,
+        <q>quote</q> and
+        <button onclick="alert('button was clicked');">button</button>.
       </p>
 
       <ol>
@@ -53,7 +55,12 @@
 console.log('Hello World!');</code></pre>
 
       <figure>
-        <img src="images/image.svg" alt="example image" width="480" height="300" />
+        <img
+          src="images/image.svg"
+          alt="example image"
+          width="480"
+          height="300"
+        />
         <figcaption>figure with image and figcaption</figcaption>
       </figure>
 
@@ -64,10 +71,32 @@ console.log('Hello World!');</code></pre>
         <figcaption>figcaption for button</figcaption>
       </figure>
 
+      <blockquote>Blockquote</blockquote>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Table</th>
+            <th>column 2</th>
+            <th>column 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>row 2</td>
+            <td>cell</td>
+            <td>cell</td>
+          </tr>
+          <tr>
+            <td>row 3</td>
+            <td>cell</td>
+            <td>cell</td>
+          </tr>
+        </tbody>
+      </table>
+
       <h2>Guide</h2>
-      <p>
-        The guide of Document.css can be found <a href="./">here</a>.
-      </p>
+      <p>The guide of Document.css can be found <a href="./">here</a>.</p>
     </main>
     <!-- <div class="Document-Rulers">
       <div class="Document-Ruler Document-Ruler_4xl" draggable="true"></div>

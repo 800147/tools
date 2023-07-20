@@ -264,6 +264,7 @@
   --brown-color: var(--brown-4);
 
   --accent-color: var(--green-color);
+  --accent-bg-color: var(--light-2);
   --link-color: var(--blue-color);
   --visited-link-color: var(--purple-color);
 }
@@ -282,6 +283,8 @@
     --red-color: var(--red-2);
     --purple-color: var(--purple-2);
     --brown-color: var(--brown-2);
+
+    --accent-bg-color: var(--dark-3);
   }
 }
 
@@ -309,9 +312,20 @@ body.Document main {
 }
 :where(
     .Document
-      :is(section, p, li, h1, h2, h3, h4, pre, q, ul, figcaption, table):not(
-        .Document-Exclude
-      ):not(.Document-Exclude *),
+      :is(
+        section,
+        p,
+        li,
+        h1,
+        h2,
+        h3,
+        h4,
+        pre,
+        blockquote,
+        ul,
+        figcaption,
+        table
+      ):not(.Document-Exclude):not(.Document-Exclude *),
     .Document-Text
   ) {
   /* make --margin-top non-inherited property */
@@ -319,15 +333,15 @@ body.Document main {
 }
 .Document
   li
-  > ul:not(:is(section, p, h1, h2, h3, h4, pre, q, ul) + *):not(
+  > ul:not(:is(section, p, h1, h2, h3, h4, pre, blockquote, ul) + *):not(
     .Document-Exclude
   ):not(.Document-Exclude *) {
   --margin-top: calc(var(--offset-bottom) * -1);
 }
 .Document
   li
-  > :is(section, p, h1, h2, h3, h4, pre, q):not(
-    :is(section, p, h1, h2, h3, h4, pre, q, ul) + *
+  > :is(section, p, h1, h2, h3, h4, pre, blockquote):not(
+    :is(section, p, h1, h2, h3, h4, pre, blockquote, ul) + *
   ):not(.Document-Exclude):not(.Document-Exclude *) {
   --margin-top: calc(var(--size-xl) + var(--offset-top) - var(--offset-bottom));
 }
@@ -340,7 +354,7 @@ body.Document main {
 
 /* Text */
 .Document
-  :is(p, li, h1, h2, h3, h4, pre, q, code, figcaption, td, th):not(
+  :is(p, li, h1, h2, h3, h4, pre, q, blockquote, code, figcaption, td, th):not(
     .Document-Exclude
   ):not(.Document-Exclude *),
 .Document-Breadcrumbs ul:not(.Document-Exclude):not(.Document-Exclude *),
@@ -354,15 +368,16 @@ body.Document main {
       var(--offset-top)
   );
   margin-top: calc(var(--offset-top) + var(--margin-top));
-  margin-bottom: calc(var(--offset-bottom));
+  margin-bottom: var(--offset-bottom);
 }
 .Document
-  :is(p, li, h1, h2, h3, h4, q):not(.Document-Exclude):not(
+  :is(p, li, h1, h2, h3, h4, blockquote):not(.Document-Exclude):not(
     .Document-Exclude *
   ) {
   word-break: break-word;
 }
-.Document :is(p, li, td):not(.Document-Exclude):not(.Document-Exclude *),
+.Document
+  :is(p, li, td, q, blockquote):not(.Document-Exclude):not(.Document-Exclude *),
 .Document-Text,
 .Document-Text_serif {
   font-family: "PT Serif", fallback-for-PT-Serif-1, fallback-for-PT-Serif-2,
@@ -488,6 +503,7 @@ body.Document main {
   margin-top: var(--margin-top);
   border-spacing: 0 var(--size-xs);
   background-color: var(--weak-color);
+  border-radius: var(--size-xs);
 }
 .Document :is(td, th):not(.Document-Exclude):not(.Document-Exclude *) {
   text-align: left;
@@ -544,6 +560,32 @@ body.Document main {
   padding-bottom: var(--size);
 }
 
+/* Blockquote */
+.Document blockquote:not(.Document-Exclude):not(.Document-Exclude *) {
+  background-color: var(--accent-bg-color);
+  padding-top: calc(var(--size-l) + var(--offset-top));
+  padding-bottom: calc(var(--size-l) + var(--offset-bottom));
+  padding-left: var(--size-xl);
+  padding-right: var(--size-l);
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: var(--margin-top);
+  margin-bottom: 0;
+  border-radius: var(--size-m);
+  overflow: hidden;
+  position: relative;
+}
+.Document blockquote:not(.Document-Exclude):not(.Document-Exclude *)::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: var(--size-m);
+  background-color: var(--accent-color);
+}
+
 /* Code */
 .Document pre:not(.Document-Exclude):not(.Document-Exclude *) {
   color: var(--light-1);
@@ -561,10 +603,6 @@ body.Document main {
 }
 @media (max-width: 42rem) {
   .Document pre:not(.Document-Exclude):not(.Document-Exclude *) {
-    padding-left: var(--size-l);
-    padding-right: var(--size-l);
-    margin-left: calc(var(--size-l) * -1);
-    margin-right: calc(var(--size-l) * -1);
     border-radius: 0px;
   }
 }
