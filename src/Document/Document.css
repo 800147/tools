@@ -495,13 +495,15 @@ body.Document main {
 /* Hr */
 .Document hr:not(.Document-Exclude):not(.Document-Exclude *) {
   padding: 0;
-  margin: 0;
-  border: calc(var(--size-xs) / 2) solid var(--strong-color);
+  margin: 0 auto;
+  border: calc(var(--size-l) / 2) solid var(--weak-color);
+  border-radius: calc(var(--size-l) / 2);
   margin-top: var(--margin-top);
-  --margin-top: var(--size-2xl);
+  --margin-top: var(--size-xl);
+  width: calc(var(--multiplier-s) * 100%);
 }
 .Document hr + *:not(.Document-Exclude):not(.Document-Exclude *) {
-  --margin-top: var(--size-2xl);
+  --margin-top: var(--size-xl);
 }
 
 /* List */
