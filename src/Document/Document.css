@@ -611,6 +611,16 @@ body.Document main {
   width: var(--size-m);
   background-color: var(--accent-color);
 }
+.Document
+  blockquote
+  > p:not(.Document-Exclude):not(.Document-Exclude *):first-child {
+  --margin-top: calc(var(--offset-top) * -1);
+}
+.Document
+  blockquote
+  > p:not(.Document-Exclude):not(.Document-Exclude *):last-child {
+  margin-bottom: 0;
+}
 
 /* Code */
 .Document pre:not(.Document-Exclude):not(.Document-Exclude *) {
