@@ -580,10 +580,11 @@ body.Document main {
 }
 .Document
   figure
-  > button:first-child:last-child:not(.Document-Exclude):not(
-    .Document-Exclude *
-  ),
-.Document figure > .Document-Button:first-child:last-child {
+  > :is(button, .Document-Button):first-child:is(
+    :last-child,
+    :has(+ figcaption)
+  ):not(.Document-Exclude):not(.Document-Exclude *) {
+  --size: var(--size-l);
   --margin-top: var(--size);
   padding-bottom: var(--size);
 }
