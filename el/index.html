@@ -7,12 +7,15 @@
     <title>el.js — web tools from 800147.github.io</title>
     <link rel="icon" type="image/svg+xml" href="../img/favicon.svg" />
     <link rel="icon" type="image/png" href="../img/favicon.png" />
-    <meta name="description" content="Tool that makes creation of elements easier" />
+    <meta
+      name="description"
+      content="Tool that makes creation of elements easier"
+    />
     <meta name="color-scheme" content="light dark" />
     <link rel="stylesheet" href="../src/Document/Document.css" />
     <script type="module">
       // https://highlightjs.org/usage/
-      import hljs from 'https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/es/highlight.min.js';
+      import hljs from "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/es/highlight.min.js";
       hljs.highlightAll();
     </script>
   </head>
@@ -28,9 +31,9 @@
       <section>
         <h2>About</h2>
         <p>
-          This tool is made to make creation of elements easier. I was inspired by JSX and wanted to
-          make something as easy to use and as easy to understand but something that would work
-          in browser without compiling.
+          This tool is made to make creation of elements easier. I was inspired
+          by JSX and wanted to make something as easy to use and as easy to
+          understand but something that would work in browser without compiling.
         </p>
       </section>
       <section>
@@ -38,7 +41,8 @@
         <section>
           <h3>"__" function</h3>
           <p>
-            It is document.createElement wrapper that makes creation of elements easier. Just look:
+            It is document.createElement wrapper that makes creation of elements
+            easier. Just look:
           </p>
           <pre><code class="language-javascript">// __(tagname, options, children)
 
@@ -53,8 +57,8 @@ document.body.appendChild(
         <section>
           <h3>Array as children</h3>
           <p>
-            Children can be not only string, but also another elements, numbers, booleans or array
-            of acceptable values with any nesting
+            Children can be not only string, but also another elements, numbers,
+            booleans or array of acceptable values with any nesting
           </p>
           <pre><code class="language-javascript">document.body.appendChild(
   __('p', {}, [
@@ -66,7 +70,8 @@ document.body.appendChild(
         <section>
           <h3>Components</h3>
           <p>
-            You can make components by wrapping creating of element with function
+            You can make components by wrapping creating of element with
+            function
           </p>
           <pre><code class="language-javascript">const Item = (n) => __('li', {}, `item ${n}`);
 
@@ -81,7 +86,8 @@ document.body.appendChild(
         <section>
           <h3>Ignored children</h3>
           <p>
-            All null, undefined and false values are ignored (but not the "0" number)
+            All null, undefined and false values are ignored (but not the "0"
+            number)
           </p>
           <pre><code class="language-javascript">const FizzBuzzItem = (n) => __('li', {}, [
   Boolean(n % 3 && n % 5) && n,
@@ -99,7 +105,8 @@ document.body.appendChild(FizzBuzz());</code></pre>
         <section>
           <h3>"used" function</h3>
           <p>
-            "used" function just executes function with given argument and returns that argument
+            "used" function just executes function with given argument and
+            returns that argument
           </p>
           <pre><code class="language-javascript">// used(function, argument)
 
@@ -115,8 +122,9 @@ document.body.appendChild(__('section', {}, [
         <section>
           <h3>"appendChildren" function</h3>
           <p>
-            "appendChildren" function is the same function used in __ to append children. It can be used
-            separately to append children to any element
+            "appendChildren" function is the same function used in __ to append
+            children. It can be used separately to append children to any
+            element
           </p>
           <pre><code class="language-javascript">// appendChildren(parentElement, children)
 
@@ -131,13 +139,10 @@ appendChildren(document.body, [
       </section>
       <section>
         <h2>Sources</h2>
-        <p>
-          The sources can be found on Github:
-        </p>
+        <p>The sources can be found on Github:</p>
         <figure>
           <a
             class="Document-Button"
-            style="--size: var(--size-l);"
             href="https://github.com/800147/tools/blob/main/src/el/el.js"
             target="_blank"
             rel="noreferrer"
@@ -145,13 +150,10 @@ appendChildren(document.body, [
             JavaScript sources
           </a>
         </figure>
-        <p>
-          And if you love TypeScript as I am, here is the link for you:
-        </p>
+        <p>And if you love TypeScript as I am, here is the link for you:</p>
         <figure>
           <a
             class="Document-Button"
-            style="--size: var(--size-l);"
             href="https://github.com/800147/tools/blob/main/src/el/el.ts"
             target="_blank"
             rel="noreferrer"

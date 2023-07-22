@@ -7,12 +7,15 @@
     <title>getUrlParams.js — web tools from 800147.github.io</title>
     <link rel="icon" type="image/svg+xml" href="../img/favicon.svg" />
     <link rel="icon" type="image/png" href="../img/favicon.png" />
-    <meta name="description" content="Tool that converts url params to given format" />
+    <meta
+      name="description"
+      content="Tool that converts url params to given format"
+    />
     <meta name="color-scheme" content="light dark" />
     <link rel="stylesheet" href="../src/Document/Document.css" />
     <script type="module">
       // https://highlightjs.org/usage/
-      import hljs from 'https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/es/highlight.min.js';
+      import hljs from "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/es/highlight.min.js";
       hljs.highlightAll();
     </script>
   </head>
@@ -27,17 +30,13 @@
       <h1>getUrlParams.js</h1>
       <section>
         <h2>About</h2>
-        <p>
-          This tool converts URL (get) params to given format.
-        </p>
+        <p>This tool converts URL (get) params to given format.</p>
       </section>
       <section>
         <h2>Guide</h2>
         <section>
           <h3>Calling without arguments</h3>
-          <p>
-            Calling without parsers returns get params in string format
-          </p>
+          <p>Calling without parsers returns get params in string format</p>
           <pre><code class="language-javascript">// getUrlParams(parsers)
 
 const { title, num } = getUrlParams();
@@ -62,9 +61,7 @@ const { title, num } = getUrlParams();
         </section>
         <section>
           <h3>Missing params</h3>
-          <p>
-            Missing params are undefined even if parser is specified
-          </p>
+          <p>Missing params are undefined even if parser is specified</p>
           <pre><code class="language-javascript">const params = getUrlParams({
  a: Boolean,
  b: Boolean,
@@ -77,7 +74,8 @@ const { title, num } = getUrlParams();
         <section>
           <h3>Multiple params</h3>
           <p>
-            If there will be multiple params with the same name, only the last one will be in result
+            If there will be multiple params with the same name, only the last
+            one will be in result
           </p>
           <pre><code class="language-javascript">const { letter } = getUrlParams();
 
@@ -87,13 +85,10 @@ const { title, num } = getUrlParams();
       </section>
       <section>
         <h2>Sources</h2>
-        <p>
-          The sources can be found on Github:
-        </p>
+        <p>The sources can be found on Github:</p>
         <figure>
           <a
             class="Document-Button"
-            style="--size: var(--size-l);"
             href="https://github.com/800147/tools/blob/main/src/getUrlParams/getUrlParams.js"
             target="_blank"
             rel="noreferrer"
@@ -101,13 +96,10 @@ const { title, num } = getUrlParams();
             JavaScript sources
           </a>
         </figure>
-        <p>
-          And if you love TypeScript as I am, here is the link for you:
-        </p>
+        <p>And if you love TypeScript as I am, here is the link for you:</p>
         <figure>
           <a
             class="Document-Button"
-            style="--size: var(--size-l);"
             href="https://github.com/800147/tools/blob/main/src/getUrlParams/getUrlParams.ts"
             target="_blank"
             rel="noreferrer"
