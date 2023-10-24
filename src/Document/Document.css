@@ -497,10 +497,10 @@ body.Document main {
   padding: 0;
   margin: 0 auto;
   border: calc(var(--size-l) / 2) solid var(--weak-color);
-  border-radius: calc(var(--size-l) / 2);
+  border-radius: var(--size-xs);
   margin-top: var(--margin-top);
   --margin-top: var(--size-xl);
-  width: calc(var(--multiplier-s) * 100%);
+  width: calc(var(--multiplier-xs) * 100%);
 }
 .Document hr + *:not(.Document-Exclude):not(.Document-Exclude *) {
   --margin-top: var(--size-xl);
