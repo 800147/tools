@@ -3,7 +3,10 @@ import "https://cdn.jsdelivr.net/npm/markdown-it@13.0.1/dist/markdown-it.min.js"
 
 const onload = async () => {
   const main = document.createElement("main");
-  const md = document.querySelector("noscript>pre").innerText;
+  const md = document
+    .querySelector("noscript")
+    .innerText.replace(/^\s*<pre>\s*|\s*<\/pre>\s*$/g, "");
+
   main.innerHTML = window.markdownit({ html: true }).render(md);
   document.body.appendChild(main);
   document.body.classList.add("Document");
