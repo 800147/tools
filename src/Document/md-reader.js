@@ -5,7 +5,7 @@ const onload = async () => {
   const main = document.createElement("main");
   const md = document
     .querySelector("noscript")
-    .innerText.replace(/^\s*<pre>\s*|\s*<\/pre>\s*$/g, "");
+    .innerText.replace(/^\s*<pre>\s*(.*)\s*<\/pre>\s*$/s, "$1");
 
   main.innerHTML = window.markdownit({ html: true }).render(md);
   document.body.appendChild(main);
