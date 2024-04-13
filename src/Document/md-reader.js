@@ -11,6 +11,14 @@ const onload = async () => {
   document.body.appendChild(main);
   document.body.classList.add("Document");
 
+  // pre tag removal
+  const preNoscript = document.querySelector(
+    "pre>noscript:first-child:last-child"
+  );
+  if (preNoscript) {
+    preNoscript.parentNode.style = "display: none;";
+  }
+
   // https://highlightjs.org/usage/
   const { default: hljs } = await import(
     "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/es/highlight.min.js"
