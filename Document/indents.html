@@ -2,147 +2,35 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document.css indents — web tools from 800147.github.io</title>
-    <link rel="icon" type="image/svg+xml" href="../img/favicon.svg" />
-    <link rel="icon" type="image/png" href="../img/favicon.png" />
     <meta name="color-scheme" content="light dark" />
-    <link rel="stylesheet" href="../src/Document/Document.css" />
-    <script type="module">
-      // https://highlightjs.org/usage/
-      import hljs from "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/es/highlight.min.js";
-      hljs.highlightAll();
-    </script>
-    <style>
-      .Document-Rulers_hiddent {
-        display: none;
-      }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page was moved</title>
+    <link
+      rel="stylesheet"
+      href="https://800147.github.io/document/src/document.css"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
   </head>
   <body class="Document">
     <nav class="Document-Breadcrumbs">
       <ul>
-        <li><a href="../../">800147.github.io</a></li>
-        <li><a href="../">tools</a></li>
-        <li><a href="./">Document.css</a></li>
+        <li><a href="/">800147.github.io</a></li>
       </ul>
     </nav>
     <main>
-      <h1>Document.css indents</h1>
-
-      <h2>Where is the gap?</h2>
+      <h1>-></h1>
+      <h2 style="color: var(--grey-color)">Page was moved</h2>
       <p>
-        Styling text document is mostly about fonts and indents. Sounds pretty
-        simple but this little complexity is enough for having problems. The
-        main difficulty is that the indent specified by margin CSS property is
-        the indent between text lines that already contain font-specific gaps.
-        And those who will read the document will not be able to recognize this
-        indent because there are no visual designation of line-height but what
-        is recognizable is the indent between baseline of text above and
-        meanline of text below.
+        The page you are looking for has been moved to another location. Click
+        the button below to navigate to the new location.
       </p>
       <figure>
-        <img src="images/indent.png" width="520" height="130" />
-        <figcaption>
-          a) the indent that can be controlled through margin;
-          <br />
-          b) the indent that person can recognize
-        </figcaption>
-      </figure>
-      <p>
-        So I decided to indent the text by those visual lines in Document.css
-        and for the same reason the better way of sizing the font is to specify
-        the x-size, not the font-size.
-      </p>
-
-      <h2>What is the grid?</h2>
-      <p>
-        Choosing the size of font or size of indent is always the torment
-        especially for non-designer developers like me. Should this header be
-        the size of 20px or 24px? It always hard to decide. Fortunately, same
-        problem has been successfully solved for the tasks estimating in Agile —
-        using Fibonacci sequence in estimates. Choosing between 21 and 34 is
-        easier than choosing between 20 and 24. And to make things even easier,
-        I decided to use not the Fibonacci sequence but golden ratio sequence.
-        They are very similar but golden ratio makes every next value to be
-        higher than the previous by the same ratio (x1.618) and it easier to
-        calculate.
-      </p>
-      <figure>
-        <img src="images/sizes.png" width="520" height="110" />
-        <figcaption>
-          the sizes are belong to the golden ratio sequence
-        </figcaption>
-      </figure>
-      <p>So both indent system and size grid are results in next picture:</p>
-      <figure>
-        <img src="images/indents.png" width="520" height="380" />
-        <figcaption>
-          every size and indent in document follows the size grid
-        </figcaption>
-      </figure>
-
-      <h2>Sizes composition</h2>
-      <p>
-        Golden ratio sequence as well as the Fibonacci sequence follows the rule
-        that the next value is a sum of two previous. This allows to combine
-        sizes in different ways.
-      </p>
-      <figure>
-        <img src="images/composition.png" width="520" height="185" />
-        <figcaption>some sizes combinations</figcaption>
-      </figure>
-      <p>
-        You can see the benefits of this combinations on the next picture.
-        Breadcrumbs height and indents in sum are the same height as the indent
-        between the top of the document and header. So no matter if there are
-        breadcrumbs, document header is always in same place and in all cases
-        all sizes and indents are follow common rules.
-      </p>
-      <figure>
-        <img src="images/compositionExample.png" width="520" height="130" />
-      </figure>
-
-      <h2>Testing</h2>
-      <p>
-        There is a way to check this indents that was used in development of
-        that styles. If you add following code to HTML, draggable rulers will
-        appear. You can drag them and check if indent is following the grid.
-      </p>
-      <pre><code class="language-html">&lt;div class="Document-Rulers">
-  &lt;div class="Document-Ruler Document-Ruler_4xl" draggable="true">&lt;/div>
-  &lt;div class="Document-Ruler Document-Ruler_3xl" draggable="true">&lt;/div>
-  &lt;div class="Document-Ruler Document-Ruler_2xl" draggable="true">&lt;/div>
-  &lt;div class="Document-Ruler Document-Ruler_xl" draggable="true">&lt;/div>
-  &lt;div class="Document-Ruler Document-Ruler_l" draggable="true">&lt;/div>
-  &lt;div class="Document-Ruler Document-Ruler_m" draggable="true">&lt;/div>
-&lt;/div></code></pre>
-      <figure>
-        <img src="images/rulers.png" width="520" height="300" />
-        <figcaption>
-          just drag the ruler to check if given indent is matching its size
-        </figcaption>
-      </figure>
-      <p>
-        On this very page you can toggle rulers by clicking the button below.
-        Unfortunately, do not work on touchscreens.
-      </p>
-      <figure>
-        <button
-          onclick="document.querySelector('.Document-Rulers')?.classList.toggle('Document-Rulers_hiddent')"
+        <a class="Document-Button" href="/document/indents"
+          >go to new location</a
         >
-          Toggle rulers
-        </button>
       </figure>
     </main>
-    <div class="Document-Rulers Document-Rulers_hiddent">
-      <div class="Document-Ruler Document-Ruler_4xl" draggable="true"></div>
-      <div class="Document-Ruler Document-Ruler_3xl" draggable="true"></div>
-      <div class="Document-Ruler Document-Ruler_2xl" draggable="true"></div>
-      <div class="Document-Ruler Document-Ruler_xl" draggable="true"></div>
-      <div class="Document-Ruler Document-Ruler_l" draggable="true"></div>
-      <div class="Document-Ruler Document-Ruler_m" draggable="true"></div>
-    </div>
   </body>
 </html>

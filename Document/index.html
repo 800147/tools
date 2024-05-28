@@ -2,243 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document.css — web tools from 800147.github.io</title>
-    <link rel="icon" type="image/svg+xml" href="../img/favicon.svg" />
-    <link rel="icon" type="image/png" href="../img/favicon.png" />
-    <meta name="description" content="Styles for your documents" />
     <meta name="color-scheme" content="light dark" />
-    <link rel="stylesheet" href="../src/Document/Document.css" />
-    <script type="module">
-      // https://highlightjs.org/usage/
-      import hljs from "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/es/highlight.min.js";
-      hljs.highlightAll();
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page was moved</title>
+    <link
+      rel="stylesheet"
+      href="https://800147.github.io/document/src/document.css"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
   </head>
   <body class="Document">
     <nav class="Document-Breadcrumbs">
       <ul>
-        <li><a href="../../">800147.github.io</a></li>
-        <li><a href="../">tools</a></li>
+        <li><a href="/">800147.github.io</a></li>
       </ul>
     </nav>
     <main>
-      <h1>Document.css</h1>
-
-      <h2>About</h2>
+      <h1>-></h1>
+      <h2 style="color: var(--grey-color)">Page was moved</h2>
       <p>
-        Document.css — is styles that are applied to any element inside the one
-        with "<code>Document</code>" class. It do not do much but what it does
-        is enough for not to think about styles of your document:
-      </p>
-      <ul>
-        <li>Pretty fonts with adjusted fallbacks;</li>
-        <li>Main thread width limitation;</li>
-        <li>Light and dark modes switching by system settings;</li>
-        <li>Some other stuff.</li>
-      </ul>
-      <p>
-        I made this stylesheet for this exact site. I wanted to describe my
-        stuff on Github without all that installing-building-bundling process
-        that gives us all our favorite components architecture but requires to
-        add extra actions to publish process, requires to keep all the packages
-        updated and makes it hard to change the same thing in different
-        projects. So here it is — the stylesheet that just prettifies vanilla
-        HTML markup that never gets old. I just write one HTML file for each
-        page that do not require any components or other files (except this
-        stylesheet), that can be deployed by just moving the file to HTTP server
-        (hello, Github pages!) and updating that one style file cause updates in
-        all pages that uses it. The result you can see in this very page you are
-        reading right now.
-      </p>
-      <h3>Sizes and indents</h3>
-      <p>
-        The interesting part of this styles is how they handles sizes and
-        indents. You can read about it on indents page.
+        The page you are looking for has been moved to another location. Click
+        the button below to navigate to the new location.
       </p>
       <figure>
-        <a
-          href="./indents"
-          class="Document-Button"
-          style="--color: var(--blue-color)"
-          >About indents</a
-        >
-      </figure>
-
-      <h2>Guide</h2>
-
-      <h3>Connection</h3>
-      <p>
-        To make it work you should add a stylesheet link to
-        "<code>https://800147.github.io/tools/src/Document/Document.css</code>"
-        and add a "<code>Document</code>" class to parent element. If you choose
-        your body tag as a document root, it will also limit the width of your
-        main tag to make it more readable.
-      </p>
-      <pre><code class="language-html">&lt;!DOCTYPE html>
-&lt;html lang="en">
-  &lt;head>
-    &lt;meta charset="UTF-8" />
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    &lt;title>Document.css example&lt;/title>
-    &lt;meta name="color-scheme" content="light dark" />
-    &lt;link rel="stylesheet" href="https://800147.github.io/tools/src/Document/Document.css" />
-  &lt;/head>
-  &lt;body class="Document">
-    &lt;main>
-      &lt;h1>title&lt;/h1>
-      &lt;p>Some text&lt;/p>
-    &lt;/main>
-  &lt;/body>
-&lt;/html></code></pre>
-
-      <p>
-        And that's it! It really all you need to style your HTML document. Just
-        make sure you use proper tags for the content and Document.css will try
-        to make it pretty.
-      </p>
-
-      <h3>Supported tags</h3>
-      <p>Here is the list of supported tags:</p>
-      <ul>
-        <li>body</li>
-        <li>main</li>
-        <li>section</li>
-        <li>h1, h2, h3, h4</li>
-        <li>hr</li>
-        <li>p</li>
-        <li>ul, ol</li>
-        <li>a</li>
-        <li>button</li>
-        <li>code</li>
-        <li>pre</li>
-        <li>figure, img, figcaption</li>
-        <li>q, blockquote</li>
-        <li>table</li>
-      </ul>
-      <p>You can check how all this look at the example page.</p>
-      <figure>
-        <a
-          href="./example"
-          class="Document-Button"
-          style="--color: var(--blue-color)"
-          >Example page</a
-        >
-      </figure>
-
-      <h3>Breadcrumbs</h3>
-      <p>
-        As a basic navigation solution there is a Breadcrumbs component. To add
-        them to your page, add an element with
-        "<code>Document-Breadcrumbs</code>" class containing the list of
-        navigation links:
-      </p>
-      <pre><code class="language-html">&lt;body class="Document">
-  &lt;nav class="Document-Breadcrumbs">
-    &lt;ul>
-      &lt;li>&lt;a href="../../">Root&lt;/a>&lt;/li>
-      &lt;li>&lt;a href="../">Parent page&lt;/a>&lt;/li>
-    &lt;/ul>
-  &lt;/nav>
-  &lt;main>
-    &lt;h1>title&lt;/h1>
-    &lt;p>Some text&lt;/p>
-  &lt;/main>
-&lt;/body></code></pre>
-      <p>
-        Breadcrumbs are always appear at the top of the page. When window width
-        is small, only last element is shown.
-      </p>
-
-      <h3>Button component</h3>
-      <p>
-        If you want for some reason to style link as a button, you can do this
-        by adding "<code>Document-Button</code>" class to link (or other
-        element):
-      </p>
-      <pre><code class="language-html">&lt;section class="Document">
-  &lt;p>
-    &lt;button>button&lt;/button>
-  &lt;/p>
-  &lt;p>
-    &lt;a href="">link&lt;/a>
-  &lt;/p>
-  &lt;p>
-    &lt;a class="Document-Button" href="">button-styled link&lt;/a>
-  &lt;/p>
-&lt;/section></code></pre>
-
-      <h3>Elements exclusion</h3>
-      <p>
-        As any styles that related to tag names, Document.css can case problems
-        with other styles that usually do not expect basic elements styling. To
-        prevent given elements from styling, you can wrap them with element with
-        "<code>Document-Exclude</code>" class.
-      </p>
-      <pre><code class="language-html">&lt;section class="Document">
-  &lt;h1>Styled title&lt;/h1>
-  &lt;p>Styled text&lt;/p>
-  &lt;p class="Document-Exclude">
-    &lt;button>Non-styled button&lt;/button>
-  &lt;/p>
-  &lt;p>
-    &lt;button>Styled button&lt;/button>
-  &lt;/p>
-&lt;/section></code></pre>
-
-      <h3>Colors for highlightjs</h3>
-      <p>
-        If you want to add syntax highlighting to code blocks, there are color
-        bindings to classes generated by
-        <a
-          href="https://highlightjs.org/usage/"
-          target="_blank"
-          rel="noreferrer"
-          >highlightjs</a
-        >. Just connect the highlightjs library in proper way:
-      </p>
-      <pre><code class="language-html">&lt;!DOCTYPE html>
-&lt;html lang="en">
-  &lt;head>
-    &lt;meta charset="UTF-8" />
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    &lt;title>Document.css example&lt;/title>
-    &lt;link rel="stylesheet" href="https://800147.github.io/tools/src/Document/Document.css" />
-    &lt;script type="module">
-      // https://highlightjs.org/usage/
-      import hljs from 'https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/es/highlight.min.js';
-      hljs.highlightAll();
-    &lt;/script>
-  &lt;/head>
-  &lt;body class="Document">
-    &lt;main>
-      &lt;h1>My code&lt;/h1>
-      &lt;pre>&lt;code class="language-javascript">console.log('Hello world!');&lt;/code>&lt;/pre>
-    &lt;/main>
-  &lt;/body>
-&lt;/html></code></pre>
-
-      <h2>Sources</h2>
-      <p>The sources can be found on Github:</p>
-      <figure>
-        <a
-          class="Document-Button"
-          href="https://github.com/800147/tools/tree/main/src/Document"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Sources on Github
-        </a>
+        <a class="Document-Button" href="/document">go to new location</a>
       </figure>
     </main>
-    <!-- <div class="Document-Rulers">
-      <div class="Document-Ruler Document-Ruler_4xl" draggable="true"></div>
-      <div class="Document-Ruler Document-Ruler_3xl" draggable="true"></div>
-      <div class="Document-Ruler Document-Ruler_2xl" draggable="true"></div>
-      <div class="Document-Ruler Document-Ruler_xl" draggable="true"></div>
-      <div class="Document-Ruler Document-Ruler_l" draggable="true"></div>
-      <div class="Document-Ruler Document-Ruler_m" draggable="true"></div>
-    </div> -->
   </body>
 </html>
