@@ -1,5 +1,8 @@
 # Web tools
 
-![icon](img/favicon.svg)
+![icon](./img/favicon.svg)
 
-[https://800147.github.io/tools](https://800147.github.io/tools)
+Here are little tools made by me for web development, prototyping and
+just having fun with web technologies.
+
+Link: <https://800147.github.io/tools/>
