@@ -18,6 +18,12 @@
       import hljs from "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/es/highlight.min.js";
       hljs.highlightAll();
     </script>
+    <style>
+      .PickerDialog {
+        background-color: transparent;
+        border: none;
+      }
+    </style>
   </head>
   <body class="Document">
     <nav class="Document-Breadcrumbs">
@@ -36,7 +42,7 @@
       </p>
       <h2>Guide</h2>
       <h3>The code</h3>
-      <pre><code class="language-svg">&lt;svg viewBox='-9 -14.5 18 18' xmlns='http://www.w3.org/2000/svg'>
+      <pre><code id="the-code" class="language-svg">&lt;svg viewBox='-9 -14.5 18 18' xmlns='http://www.w3.org/2000/svg'>
   &lt;text text-anchor='middle'>😀&lt;/text>
 &lt;/svg></code></pre>
       <h3>The result</h3>
@@ -48,6 +54,7 @@
       </p>
       <figure>
         <img
+          id="img"
           width="120"
           height="120"
           src="data:image/svg+xml,&lt;svg viewBox='-9 -14.5 18 18' xmlns='http://www.w3.org/2000/svg'>&lt;text text-anchor='middle'>😀&lt;/text>&lt;/svg>"
@@ -58,7 +65,7 @@
         You can use it inside data-url to use an image without having one on a
         file system.
       </p>
-      <pre><code class="language-html">&lt;link
+      <pre><code id="data-url-code" class="language-html">&lt;link
   rel="icon"
   type="image/svg+xml"
   href="data:image/svg+xml,&amp;lt;svg viewBox='-9 -14.5 18 18' xmlns='http://www.w3.org/2000/svg'>&amp;lt;text text-anchor='middle'>😀&amp;lt;/text>&amp;lt;/svg>"
@@ -68,6 +75,24 @@
         browsers (yet?). I use it for stuff that I make for myself so I am sure
         that it wouldn't make someone unhappy.
       </p>
+
+      <section id="another-emoji-section" style="display: none">
+        <h3>Select other emoji</h3>
+        <p id="another-emoji-paragraph">
+          In this whole article we used the «😀» symbol as an emoli example. You
+          can specify another one using the button below:
+        </p>
+        <figure>
+          <button id="another-emoji-button">another emoji</button>
+          <figcaption>
+            <a href="https://github.com/missive/emoji-mart" target="_blank"
+              >Emoji-mart</a
+            >
+            is used as an emoji picker
+          </figcaption>
+        </figure>
+        <dialog id="another-emoji-dialog" class="PickerDialog"></dialog>
+      </section>
     </main>
     <!-- Cloudflare Web Analytics -->
     <script
@@ -76,5 +101,48 @@
       data-cf-beacon='{"token": "01ed86e7ec1e4311aca302985f6ebcab"}'
     ></script>
     <!-- End Cloudflare Web Analytics -->
+    <script src="https://cdn.jsdelivr.net/npm/emoji-mart@latest/dist/browser.js"></script>
+    <script>
+      const replaces = [
+        { id: "the-code", prop: "textContent" },
+        { id: "img", prop: "src" },
+        { id: "data-url-code", prop: "textContent" },
+        { id: "another-emoji-paragraph", prop: "textContent" },
+      ];
+      replaces.forEach((replace) => {
+        const { id, prop } = replace;
+        replace.wrap = document.getElementById(id)[prop].split("😀");
+        if (replace.wrap.length < 2) {
+          replace.wrap = document
+            .getElementById(id)
+            [prop].split("%F0%9F%98%80");
+        }
+      });
+
+      const setEmoji = (emoji) => {
+        replaces.forEach(({ id, prop, wrap: [before, after] }) => {
+          document.getElementById(id)[prop] = `${before}${emoji}${after}`;
+        });
+      };
+
+      document.getElementById("another-emoji-dialog").appendChild(
+        new EmojiMart.Picker({
+          onEmojiSelect: ({ native }) => {
+            setEmoji(native);
+            document.getElementById("another-emoji-dialog").close();
+          },
+          onClickOutside: () =>
+            document.getElementById("another-emoji-dialog").close(),
+        })
+      );
+
+      document.getElementById("another-emoji-button").onclick = () =>
+        setTimeout(
+          () => document.getElementById("another-emoji-dialog").showModal(),
+          0
+        );
+
+      document.getElementById("another-emoji-section").style = "";
+    </script>
   </body>
 </html>
