@@ -123,6 +123,8 @@
         replaces.forEach(({ id, prop, wrap: [before, after] }) => {
           document.getElementById(id)[prop] = `${before}${emoji}${after}`;
         });
+        
+        hljs?.highlightAll();
       };
 
       document.getElementById("another-emoji-dialog").appendChild(
