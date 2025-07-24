@@ -17,6 +17,7 @@
       // https://highlightjs.org/usage/
       import hljs from "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/es/highlight.min.js";
       hljs.highlightAll();
+      window.hljs = hljs;
     </script>
     <style>
       .PickerDialog {
@@ -123,8 +124,8 @@
         replaces.forEach(({ id, prop, wrap: [before, after] }) => {
           document.getElementById(id)[prop] = `${before}${emoji}${after}`;
         });
-        
-        hljs?.highlightAll();
+
+        window.hljs?.highlightAll();
       };
 
       document.getElementById("another-emoji-dialog").appendChild(
