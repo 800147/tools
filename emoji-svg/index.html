@@ -5,8 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Emoji.svg — web tools from 800147.github.io</title>
-    <link rel="icon" type="image/svg+xml" href="../img/favicon.svg" />
-    <link rel="icon" type="image/png" href="../img/favicon.png" />
+    <link
+      id="favicon"
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,&lt;svg viewBox='-9 -14.5 18 18' xmlns='http://www.w3.org/2000/svg'>&lt;text text-anchor='middle'>😀&lt;/text>&lt;/svg>"
+    >
     <meta name="description" content="SVG image showing single emoji" />
     <meta name="color-scheme" content="light dark" />
     <link
@@ -82,14 +86,15 @@
       <p>
         The code above may not work properly in some browsers (yet?). I use it
         for stuff that I make for myself so I am sure that it wouldn't cause
-        any problems.
+        any problems. Also this code is used in this exact document as an
+        example.
       </p>
 
       <section id="another-emoji-section" style="display: none">
         <h3>Select other emoji</h3>
         <p id="another-emoji-paragraph">
-          In this whole article we used the "😀" symbol as an emoji example. You
-          can specify another one using the button below:
+          In this whole article the "😀" symbol was used as an emoji example.
+          You can specify another one using the button below:
         </p>
         <figure>
           <button id="another-emoji-button">another emoji</button>
@@ -120,6 +125,7 @@
         { id: "download-link", prop: "textContent" },
         { id: "download-link", prop: "href" },
         { id: "download-link", prop: "download" },
+        { id: "favicon", prop: "href" },
       ];
       replaces.forEach((replace) => {
         const { id, prop } = replace;
