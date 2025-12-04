@@ -7,7 +7,7 @@
     <title>Emoji.svg — web tools from 800147.github.io</title>
     <link rel="icon" type="image/svg+xml" href="../img/favicon.svg" />
     <link rel="icon" type="image/png" href="../img/favicon.png" />
-    <meta name="description" content="SVG template showing single emoji" />
+    <meta name="description" content="SVG image showing single emoji" />
     <meta name="color-scheme" content="light dark" />
     <link
       rel="stylesheet"
@@ -39,7 +39,7 @@
       <p>
         This is a template that lets you make an svg out of emoji. You may want
         to use emoji where image is needed but emoji is not an image — it is
-        text. This template will help you in this situation.
+        text. This template will help you to make image out of emoji.
       </p>
       <h2>Guide</h2>
       <h3>The code</h3>
@@ -49,9 +49,9 @@
       <h3>The result</h3>
       <p>
         The resulting image looks exactly the same as the source emoji because
-        it uses text node with emoji inside. Also it means that image will be
-        broken on systems that doesn't support given emoji so be careful with
-        this.
+        it uses text node with emoji inside. It also means that the image may
+        look different on different systems or even be broken on systems that
+        doesn't support given emoji so be careful with this.
       </p>
       <figure>
         <img
@@ -61,10 +61,18 @@
           src="data:image/svg+xml,&lt;svg viewBox='-9 -14.5 18 18' xmlns='http://www.w3.org/2000/svg'>&lt;text text-anchor='middle'>%F0%9F%98%80&lt;/text>&lt;/svg>"
         />
       </figure>
+      <figure>
+        <a
+          id="download-link"
+          class="Document-Button"
+          href="data:image/svg+xml,&lt;svg viewBox='-9 -14.5 18 18' xmlns='http://www.w3.org/2000/svg'>&lt;text text-anchor='middle'>%F0%9F%98%80&lt;/text>&lt;/svg>"
+          download="😀.svg"
+        >download 😀.svg</a>
+      </figure>
       <h3>Data-url</h3>
       <p>
-        You can use it inside data-url to use an image without having one on a
-        file system.
+        You can use data-url to use an image without saving it on a file
+        system. Here is the example of using an emoji as web page favicon:
       </p>
       <pre><code id="data-url-code" class="language-html">&lt;link
   rel="icon"
@@ -72,15 +80,15 @@
   href="data:image/svg+xml,&amp;lt;svg viewBox='-9 -14.5 18 18' xmlns='http://www.w3.org/2000/svg'>&amp;lt;text text-anchor='middle'>😀&amp;lt;/text>&amp;lt;/svg>"
 ></code></pre>
       <p>
-        Please check the code above befor copying it — it doesn't work in all
-        browsers (yet?). I use it for stuff that I make for myself so I am sure
-        that it wouldn't make someone unhappy.
+        The code above may not work properly in some browsers (yet?). I use it
+        for stuff that I make for myself so I am sure that it wouldn't cause
+        any problems.
       </p>
 
       <section id="another-emoji-section" style="display: none">
         <h3>Select other emoji</h3>
         <p id="another-emoji-paragraph">
-          In this whole article we used the «😀» symbol as an emoli example. You
+          In this whole article we used the "😀" symbol as an emoji example. You
           can specify another one using the button below:
         </p>
         <figure>
@@ -109,6 +117,9 @@
         { id: "img", prop: "src" },
         { id: "data-url-code", prop: "textContent" },
         { id: "another-emoji-paragraph", prop: "textContent" },
+        { id: "download-link", prop: "textContent" },
+        { id: "download-link", prop: "href" },
+        { id: "download-link", prop: "download" },
       ];
       replaces.forEach((replace) => {
         const { id, prop } = replace;
